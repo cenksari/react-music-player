@@ -10,16 +10,20 @@ import Progress from './Progress';
 import Duration from './Duration';
 
 const Player = (): React.JSX.Element | null => {
-  const { currentTrack, currentAlbum } = useTrack();
+  const { currentTrack, currentAlbum, changeState } = useTrack();
 
   const audioRef = React.useRef<HTMLAudioElement>(null);
+
+  const handleOnEnded = (): void => {
+    changeState('stopped');
+  };
 
   if (currentTrack && currentAlbum) {
     return (
       <div className='player'>
         <Progress current={0} duration={0} />
 
-        <audio src='' controls ref={audioRef}>
+        <audio src='' controls ref={audioRef} onEnded={handleOnEnded}>
           <track kind='captions' />
         </audio>
 

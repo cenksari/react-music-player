@@ -17,10 +17,14 @@ const TrackLine = ({
   playing = false,
   selected = false,
 }: IProps): React.JSX.Element => {
-  const { addItem } = useTrack();
+  const { currentState, currentTrack, addItem, changeState } = useTrack();
 
   const handleAddTrack = (): void => {
-    addItem(track, album);
+    if (currentTrack !== track) {
+      addItem(track, album);
+    } else {
+      changeState(currentState === 'playing' ? 'paused' : 'playing');
+    }
   };
 
   return (

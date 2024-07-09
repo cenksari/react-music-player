@@ -12,11 +12,13 @@ interface IProps {
 }
 
 const Information = ({ album, tracks }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, addItem } = useTrack();
+  const { currentState, currentTrack, addItem, changeState } = useTrack();
 
   const handleAddTrack = (): void => {
     if (!currentTrack) {
       addItem(tracks[0], album);
+    } else {
+      changeState(currentState === 'playing' ? 'paused' : 'playing');
     }
   };
 
@@ -25,7 +27,7 @@ const Information = ({ album, tracks }: IProps): React.JSX.Element => {
       <div className='image'>
         <div className='image-inner'>
           <div className='front'>
-            <img width='400' src={album.image} alt={album.name} draggable='false' />
+            <img src={album.image} alt={album.name} draggable='false' />
           </div>
           <div
             className='back flex flex-h-center flex-v-center'
