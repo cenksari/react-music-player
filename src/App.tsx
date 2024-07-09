@@ -1,6 +1,12 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
+import TrackLine from './components/track/TrackLine';
+
+import type { ITrack } from './types/types';
+
+import data from './data/data.json';
+
 import './styles/player.css';
 
 const App = (): React.JSX.Element => {
@@ -30,33 +36,13 @@ const App = (): React.JSX.Element => {
             <a href='/' className='active-opacity'>
               <span>Seasons In The Abyss</span>
             </a>
-            <span className='album-info'>15 Songs - 48 Minutes</span>
+            <span className='album-info'>10 Songs - 42 Minutes</span>
           </div>
 
           <div className='playlist scroller-vertical'>
-            <a href='/' className='active-opacity'>
-              <div className='track flex flex-gap flex-v-center flex-space-between'>
-                <span className='flex flex-h-center flex-v-center track-number material-symbols-outlined'>
-                  play_arrow
-                </span>
-                <span className='flex flex-column flex-grow flex-gap-small'>
-                  <em>War Ensemble</em>
-                  <em>25M Plays</em>
-                </span>
-                <span>4:59</span>
-              </div>
-            </a>
-
-            <a href='/' className='active-opacity'>
-              <div className='playing track flex flex-gap flex-v-center flex-space-between'>
-                <span className='flex flex-h-center flex-v-center track-number'>1</span>
-                <span className='flex flex-column flex-grow flex-gap-small'>
-                  <em>Blood Red</em>
-                  <em>1.5M Plays</em>
-                </span>
-                <span>4:59</span>
-              </div>
-            </a>
+            {data.map((item: ITrack) => (
+              <TrackLine key={item.id} item={item} />
+            ))}
           </div>
         </div>
 

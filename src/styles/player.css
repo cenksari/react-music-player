@@ -326,14 +326,30 @@ strong,
   background-color: rgba(0,0,0,0.2);
 }
 
+.information .track em {
+  font-size: 0.9em;
+}
+
 .information .track .track-number {
   width: 30px;
   height: 30px;
   border-radius: 50em;
 }
 
-.information .track.playing {
+.information .track.active {
   background-color: rgba(0,0,0,0.1);
+}
+
+.information .track .control {
+  display: none;
+}
+
+.information .track:hover .control {
+  display: flex;
+}
+
+.information .track:hover .number {
+  display: none;
 }
 
 .playlist {
