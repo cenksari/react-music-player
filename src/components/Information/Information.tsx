@@ -1,5 +1,7 @@
 import React from 'react';
 
+import useTrack from '../../hooks/useTrack';
+
 import TrackLine from '../Track/TrackLine';
 
 import type { IAlbum, ITrack } from '../../types/types';
@@ -9,44 +11,66 @@ interface IProps {
   tracks: ITrack[];
 }
 
-const Information = ({ album, tracks }: IProps): React.JSX.Element => (
-  <div className='information flex flex-column flex-gap'>
-    <div className='image'>
-      <div className='image-inner'>
-        <div className='front'>
-          <img width='400' src={album.image} alt={album.name} draggable='false' />
+const Information = ({ album, tracks }: IProps): React.JSX.Element => {
+  const { currentState, currentTrack, addItem } = useTrack();
+
+  const handleAddTrack = (): void => {
+    if (!currentTrack) {
+      addItem(tracks[0], album);
+    }
+  };
+
+  return (
+    <div className='information flex flex-column flex-gap'>
+      <div className='image'>
+        <div className='image-inner'>
+          <div className='front'>
+            <img width='400' src={album.image} alt={album.name} draggable='false' />
+          </div>
+          <div
+            className='back flex flex-h-center flex-v-center'
+            style={{ backgroundImage: `url('${album.bandimage}')` }}
+          />
         </div>
-        <div
-          className='back flex flex-h-center flex-v-center'
-          style={{ backgroundImage: `url('${album.bandimage}')` }}
-        />
+      </div>
+
+      <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
+        <a href='/' className='active-opacity'>
+          <h3>{album.artist}</h3>
+        </a>
+        <a href='/' className='active-opacity'>
+          <span>{album.name}</span>
+        </a>
+        <span className='album-info'>
+          {album.songs} Songs - {album.minutes} Minutes
+        </span>
+      </div>
+
+      <div className='flex flex-h-center'>
+        <button
+          type='button'
+          onClick={() => handleAddTrack()}
+          className='play-button flex flex-h-center flex-v-center active-opacity'
+        >
+          <span className='material-symbols-outlined'>
+            {currentState === 'playing' ? 'pause' : 'play_arrow'}
+          </span>
+        </button>
+      </div>
+
+      <div className='playlist scroller-vertical'>
+        {tracks.map((item: ITrack) => (
+          <TrackLine
+            key={item.id}
+            track={item}
+            album={album}
+            selected={currentTrack?.id === item.id}
+            playing={currentTrack?.id === item.id && currentState === 'playing'}
+          />
+        ))}
       </div>
     </div>
-
-    <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
-      <a href='/' className='active-opacity'>
-        <h3>{album.artist}</h3>
-      </a>
-      <a href='/' className='active-opacity'>
-        <span>{album.name}</span>
-      </a>
-      <span className='album-info'>
-        {album.songs} Songs - {album.minutes} Minutes
-      </span>
-    </div>
-
-    <div className='flex flex-h-center'>
-      <button type='button' className='play-button flex flex-h-center flex-v-center active-opacity'>
-        <span className='material-symbols-outlined'>play_arrow</span>
-      </button>
-    </div>
-
-    <div className='playlist scroller-vertical'>
-      {tracks.map((item: ITrack) => (
-        <TrackLine key={item.id} item={item} />
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 export default Information;

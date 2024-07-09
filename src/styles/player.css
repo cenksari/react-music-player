@@ -470,3 +470,43 @@ strong,
 .image:hover .image-inner {
   transform: rotateY(-180deg);
 }
+
+audio {
+  display: none;
+}
+
+input[type='range'] {
+  --g: 0px; /* gap */
+  --l: 3px; /* line thickness */
+  --s: 15px; /* thumb size */
+  --c: #ffffff;
+
+  width: 100%;
+  cursor: pointer;
+  height: var(--s);
+  overflow: hidden;
+  appearance: none;
+  background: none;
+  border-radius: 50em;
+}
+
+input[type='range']:focus-visible,
+input[type='range']:hover {
+  --p: 25%;
+}
+
+input[type='range']:active,
+input[type='range']:focus-visible {
+  --b: var(--s);
+}
+
+input[type='range' i]::-webkit-slider-thumb {
+  transition: 0.3s;
+  aspect-ratio: 1;
+  height: var(--s);
+  appearance: none;
+  border-radius: 50em;
+  background-color: #ffffff;
+  border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 /
+    calc(50% - var(--l) / 2) 100vw/0 calc(100vw + var(--g));
+}

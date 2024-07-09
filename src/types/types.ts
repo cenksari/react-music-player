@@ -17,8 +17,10 @@ export interface IAlbum {
 }
 
 export interface ITrackContext {
-  track?: ITrack | null;
-  album?: IAlbum | null;
-  addItem: (album: IAlbum, track: ITrack) => void;
+  currentState?: string | null;
+  currentTrack?: ITrack | null;
+  currentAlbum?: IAlbum | null;
+  addItem: (track: ITrack, album: IAlbum) => void;
   removeItem: () => void;
+  changeState: (state: string) => void;
 }

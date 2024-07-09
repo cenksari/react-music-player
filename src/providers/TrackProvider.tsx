@@ -9,22 +9,29 @@ interface IProps {
 }
 
 const TrackProvider = ({ children }: IProps): React.JSX.Element => {
+  const [currentState, setCurrentState] = React.useState<string | null>(null);
   const [currentTrack, setCurrentTrack] = React.useState<ITrack | null>(null);
   const [currentAlbum, setCurrentAlbum] = React.useState<IAlbum | null>(null);
 
-  const addItem = (album: IAlbum, track: ITrack): void => {
-    setCurrentAlbum(album);
+  const addItem = (track: ITrack, album: IAlbum): void => {
     setCurrentTrack(track);
+    setCurrentAlbum(album);
+    setCurrentState('playing');
   };
 
   const removeItem = (): void => {
-    setCurrentAlbum(null);
     setCurrentTrack(null);
+    setCurrentAlbum(null);
+    setCurrentState(null);
+  };
+
+  const changeState = (state: string): void => {
+    setCurrentState(state);
   };
 
   const providerValue = React.useMemo(
-    () => ({ currentTrack, currentAlbum, addItem, removeItem }),
-    [currentTrack, currentAlbum]
+    () => ({ currentState, currentTrack, currentAlbum, addItem, removeItem, changeState }),
+    [currentState, currentTrack, currentAlbum]
   );
 
   return <TrackContext.Provider value={providerValue}>{children}</TrackContext.Provider>;
