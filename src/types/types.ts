@@ -13,4 +13,5 @@ export interface IAlbum {
   songs: number;
   minutes: number;
   image: string;
+  bandimage: string;
 }

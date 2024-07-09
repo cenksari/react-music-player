@@ -11,7 +11,17 @@ interface IProps {
 
 const Information = ({ album, tracks }: IProps): React.JSX.Element => (
   <div className='information flex flex-column flex-gap'>
-    <img width='400' src={album.image} alt={album.name} draggable='false' />
+    <div className='image'>
+      <div className='image-inner'>
+        <div className='front'>
+          <img width='400' src={album.image} alt={album.name} draggable='false' />
+        </div>
+        <div
+          className='back flex flex-h-center flex-v-center'
+          style={{ backgroundImage: `url('${album.bandimage}')` }}
+        />
+      </div>
+    </div>
 
     <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
       <a href='/' className='active-opacity'>
@@ -23,6 +33,12 @@ const Information = ({ album, tracks }: IProps): React.JSX.Element => (
       <span className='album-info'>
         {album.songs} Songs - {album.minutes} Minutes
       </span>
+    </div>
+
+    <div className='flex flex-h-center'>
+      <button type='button' className='play-button flex flex-h-center flex-v-center active-opacity'>
+        <span className='material-symbols-outlined'>play_arrow</span>
+      </button>
     </div>
 
     <div className='playlist scroller-vertical'>

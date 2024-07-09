@@ -358,6 +358,19 @@ strong,
   display: none;
 }
 
+.information .play-button {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 50em;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.information .play-button span {
+  font-size: 2.3em;
+  color: #000000;
+}
+
 .playlist {
   height: 370px;
   overflow-y: scroll;
@@ -415,4 +428,45 @@ strong,
 
 .player .player-information .track-info a:hover {
   text-decoration: underline;
+}
+
+.image {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+  color: #000000;
+  perspective: 1000px;
+  font-family: monospace;
+}
+
+.image .image-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.image .image-inner .front,
+.image .image-inner .back {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.image .back {
+  border-radius: 20px;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image:hover .image-inner {
+  transform: rotateY(-180deg);
 }
