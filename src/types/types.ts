@@ -5,3 +5,12 @@ export interface ITrack {
   duration: string;
   playcount: string;
 }
+
+export interface IAlbum {
+  id: string;
+  name: string;
+  artist: string;
+  songs: number;
+  minutes: number;
+  image: string;
+}

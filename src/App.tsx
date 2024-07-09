@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
-import TrackLine from './components/track/TrackLine';
-
-import type { ITrack } from './types/types';
+import Information from './components/Player/Information';
 
 import data from './data/data.json';
+import album from './data/album.json';
 
 import './styles/player.css';
 
@@ -21,30 +20,7 @@ const App = (): React.JSX.Element => {
       />
 
       <div className='full-h flex flex-v-center flex-h-center'>
-        <div className='information flex flex-column flex-gap'>
-          <img
-            width='400'
-            src='https://lh3.googleusercontent.com/FkiLeJISpkE_HiuIwW-pDvvcCF5BbG0js2fLr0wmjC9OXCo6JrQHYLHHFvdoKmXaxr5hBeYGVs0BoSQ=w544-h544-l90-rj'
-            alt=''
-            draggable='false'
-          />
-
-          <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
-            <a href='/' className='active-opacity'>
-              <h3>Slayer</h3>
-            </a>
-            <a href='/' className='active-opacity'>
-              <span>Seasons In The Abyss</span>
-            </a>
-            <span className='album-info'>10 Songs - 42 Minutes</span>
-          </div>
-
-          <div className='playlist scroller-vertical'>
-            {data.map((item: ITrack) => (
-              <TrackLine key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
+        <Information album={album} tracks={data} />
 
         <div className='player'>
           <div className='progress'>

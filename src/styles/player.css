@@ -336,6 +336,12 @@ strong,
   border-radius: 50em;
 }
 
+.information .track .name-button {
+  font-weight: 600;
+  padding-bottom: 5px;
+  justify-content: flex-start;
+}
+
 .information .track.active {
   background-color: rgba(0,0,0,0.1);
 }
@@ -353,7 +359,7 @@ strong,
 }
 
 .playlist {
-  height: 410px;
+  height: 370px;
   overflow-y: scroll;
   padding-right: 10px;
 }
