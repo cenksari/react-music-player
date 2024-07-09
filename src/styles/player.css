@@ -143,10 +143,10 @@ p {
   --webkit-user-select: none;
   font-weight: normal !important;
   font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 .container {
@@ -323,7 +323,7 @@ strong,
 }
 
 .information .track:hover {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .information .track em {
@@ -343,7 +343,7 @@ strong,
 }
 
 .information .track.active {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .information .track .control {
