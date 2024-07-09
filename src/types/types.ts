@@ -15,3 +15,10 @@ export interface IAlbum {
   image: string;
   bandimage: string;
 }
+
+export interface ITrackContext {
+  track?: ITrack | null;
+  album?: IAlbum | null;
+  addItem: (album: IAlbum, track: ITrack) => void;
+  removeItem: () => void;
+}

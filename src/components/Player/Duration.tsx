@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface IProps {
-  current: string;
-  duration: string;
+  current?: string;
+  duration?: string;
 }
 
 const Duration = ({ current, duration }: IProps): React.JSX.Element => (
