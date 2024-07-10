@@ -6,7 +6,7 @@ If you like this resource, please follow me on GitHub. Thank you!
 
 ## Demo
 
-[https://react-music-player.vercel.app/](https://react-music-player.vercel.app/)
+[https://react-music-player-rho-blush.vercel.app/](https://react-music-player-rho-blush.vercel.app/)
 
 ## Screenshots
 
