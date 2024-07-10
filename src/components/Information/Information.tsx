@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
 // components
-import TrackLine from './TrackLine';
+import Image from './Image';
+import Details from './Details';
+import Buttons from './Buttons';
+import Playlist from './Playlist';
 
 // types
 import type { IAlbum, ITrack } from '../../types/types';
@@ -19,64 +20,17 @@ interface IProps {
 }
 
 const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack } = useTrack();
+  const { currentTrack } = useTrack();
 
   return (
-    <div className='information flex flex-column flex-gap'>
-      <div className='image'>
-        <div className='image-inner'>
-          <div className='front'>
-            <img src={album.image} alt={album.name} draggable='false' />
-          </div>
-          <div
-            className='back flex flex-h-center flex-v-center'
-            style={{ backgroundImage: `url('${album.bandimage}')` }}
-          />
-        </div>
-      </div>
+    <div className='information flex flex-column flex-gap no-select'>
+      <Image album={album} />
 
-      <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
-        <Link to='/' className='active-opacity'>
-          <h3>{album.artist}</h3>
-        </Link>
-        <Link to='/' className='active-opacity'>
-          <span>{album.name}</span>
-        </Link>
-        <span className='album-info'>
-          {album.songs} Songs - {album.minutes} Minutes
-        </span>
-      </div>
+      <Details album={album} />
 
-      <div className='flex flex-gap flex-h-center flex-v-center'>
-        <button type='button' className='flex flex-h-center flex-v-center small active-opacity'>
-          <span className='material-symbols-outlined'>share</span>
-        </button>
-        <button
-          type='button'
-          onClick={() => handlePlayPause(currentTrack || tracks[0], album)}
-          className='play-button flex flex-h-center flex-v-center active-opacity'
-        >
-          <span className='material-symbols-outlined'>
-            {currentState === 'playing' ? 'pause' : 'play_arrow'}
-          </span>
-        </button>
-        <button type='button' className='flex flex-h-center flex-v-center small active-opacity'>
-          <span className='material-symbols-outlined'>more_vert</span>
-        </button>
-      </div>
+      <Buttons handlePlayPause={() => handlePlayPause(currentTrack || tracks[0], album)} />
 
-      <div className='playlist scroller-vertical'>
-        {tracks.map((item: ITrack) => (
-          <TrackLine
-            key={item.id}
-            track={item}
-            album={album}
-            handlePlayPause={handlePlayPause}
-            selected={currentTrack?.id === item.id}
-            playing={currentTrack?.id === item.id && currentState === 'playing'}
-          />
-        ))}
-      </div>
+      <Playlist album={album} tracks={tracks} handlePlayPause={handlePlayPause} />
     </div>
   );
 };

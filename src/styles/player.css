@@ -248,16 +248,6 @@ strong,
   justify-content: space-between;
 }
 
-.input {
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.input::placeholder {
-  user-select: none;
-  --webkit-user-select: none;
-}
-
 .active-opacity:active {
   opacity: 0.6;
   transition: 0.2s all ease;
@@ -300,8 +290,59 @@ strong,
 }
 
 .information {
-  margin-top: -95px;
+  left: 50%;
+  width: 100%;
+  max-width: 600px;
   position: absolute;
+  padding: 30px 0 110px 0;
+  transform: translateX(-50%);
+}
+
+.information .image {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #000000;
+  perspective: 1000px;
+  font-family: monospace;
+}
+
+.information .image img {
+  width: 400px;
+  height: 400px;
+}
+
+.information .image .image-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.information .image .image-inner .front,
+.information .image .image-inner .back {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.information .image .back {
+  border-radius: 20px;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.information .image:hover .image-inner {
+  transform: rotateY(-180deg);
 }
 
 .information .album {
@@ -310,54 +351,12 @@ strong,
 
 .information .album .album-info {
   margin-top: 5px;
+  color: #dadada;
   font-size: 0.75em;
 }
 
 .information .album a:hover {
   text-decoration: underline;
-}
-
-.information .track {
-  font-size: 0.75em;
-  margin-bottom: 3px;
-  border-radius: 10px;
-  padding: 15px 15px 15px 5px;
-}
-
-.information .track:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.information .track em {
-  font-size: 0.9em;
-}
-
-.information .track .track-number {
-  width: 30px;
-  height: 30px;
-  border-radius: 50em;
-}
-
-.information .track .name-button {
-  font-weight: 600;
-  padding-bottom: 5px;
-  justify-content: flex-start;
-}
-
-.information .track.active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.information .track .control {
-  display: none;
-}
-
-.information .track:hover .control {
-  display: flex;
-}
-
-.information .track:hover .number {
-  display: none;
 }
 
 .information .play-button {
@@ -385,22 +384,64 @@ strong,
   font-size: 0.9em;
 }
 
-.playlist {
-  height: 370px;
-  overflow-y: scroll;
-  padding-right: 10px;
+.information .playlist {
+  padding: 0 10px;
 }
 
-.playlist a {
+.information .playlist a {
   display: block;
   margin-bottom: 4px;
+}
+
+.information .playlist .track {
+  font-size: 0.75em;
+  margin-bottom: 3px;
+  border-radius: 10px;
+  padding: 15px 15px 15px 5px;
+}
+
+.information .playlist .track:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.information .playlist .track em {
+  font-size: 0.9em;
+}
+
+.information .playlist .track .track-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50em;
+}
+
+.information .playlist .track .name-button {
+  font-weight: 600;
+  padding-bottom: 5px;
+  justify-content: flex-start;
+}
+
+.information .playlist .track.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.information .playlist .track .control {
+  display: none;
+}
+
+.information .playlist .track:hover .control {
+  display: flex;
+}
+
+.information .playlist .track:hover .number {
+  display: none;
 }
 
 .player {
   left: 0;
   right: 0;
   bottom: 0;
-  position: absolute;
+  z-index: 999999;
+  position: fixed;
   background-color: #212121;
 }
 
@@ -436,52 +477,6 @@ strong,
 
 .player .player-information .track-info a:hover {
   text-decoration: underline;
-}
-
-.image {
-  width: 400px;
-  height: 400px;
-  cursor: pointer;
-  color: #000000;
-  perspective: 1000px;
-  font-family: monospace;
-}
-
-.image img {
-  width: 400px;
-  height: 400px;
-}
-
-.image .image-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
-
-.image .image-inner .front,
-.image .image-inner .back {
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.image .back {
-  border-radius: 20px;
-  transform: rotateY(180deg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.image:hover .image-inner {
-  transform: rotateY(-180deg);
 }
 
 audio {
@@ -540,15 +535,11 @@ input[type='range' i]::-webkit-slider-thumb {
     calc(100vw + var(--g));
 }
 
-@media (max-width: 500px) {
-  .image,
-  .image img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .playlist {
-    height: 220px;
+@media (max-width: 600px) {
+  .information .image,
+  .information .image img {
+    width: 320px;
+    height: 320px;
   }
 
   .player .flex-gap {

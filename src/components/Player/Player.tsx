@@ -15,7 +15,7 @@ import Duration from './Duration';
 import type { ITrack, IAlbum } from '../../types/types';
 
 // utilities
-import Utils from '../utils/Utils';
+import Utils from '../../utils/Utils';
 
 // interfaces
 interface IProps {
@@ -134,7 +134,7 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
 
   if (currentTrack && currentAlbum) {
     return (
-      <div className='player'>
+      <div className='player no-select'>
         <Progress
           duration={trackDuration}
           currentProgress={currrentProgress}

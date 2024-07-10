@@ -9,12 +9,12 @@ interface IProps {
 const Cover = ({ image, children }: IProps): React.JSX.Element => (
   <>
     <div
-      className='cover'
       style={{
         backgroundImage: `url('${image}')`,
       }}
+      className='cover'
     />
-    <div className='full-h flex flex-v-center flex-h-center'>{children}</div>
+    {children}
   </>
 );
 
