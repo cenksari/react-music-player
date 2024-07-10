@@ -1,5 +1,6 @@
 import React from 'react';
 
+// interfaces
 interface IProps {
   image: string;
   children: React.ReactNode;

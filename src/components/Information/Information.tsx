@@ -2,12 +2,16 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+// hooks
 import useTrack from '../../hooks/useTrack';
 
-import TrackLine from '../Track/TrackLine';
+// components
+import TrackLine from './TrackLine';
 
+// types
 import type { IAlbum, ITrack } from '../../types/types';
 
+// interfaces
 interface IProps {
   album: IAlbum;
   tracks: ITrack[];

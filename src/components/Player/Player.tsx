@@ -1,9 +1,9 @@
 import React from 'react';
 
+// hooks
 import useTrack from '../../hooks/useTrack';
 
-import type { ITrack, IAlbum } from '../../types/types';
-
+// components
 import Volume from './Volume';
 import Expand from './Expand';
 import Control from './Control';
@@ -11,8 +11,13 @@ import Details from './Details';
 import Progress from './Progress';
 import Duration from './Duration';
 
+// types
+import type { ITrack, IAlbum } from '../../types/types';
+
+// utilities
 import Utils from '../utils/Utils';
 
+// interfaces
 interface IProps {
   tracks?: ITrack[];
   audioRef?: React.RefObject<HTMLAudioElement> | null;

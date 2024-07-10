@@ -2,8 +2,10 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+// types
 import type { IAlbum, ITrack } from '../../types/types';
 
+// interfaces
 interface IProps {
   track?: ITrack | null;
   album?: IAlbum | null;

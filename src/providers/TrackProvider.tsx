@@ -1,9 +1,12 @@
 import React from 'react';
 
+// contexts
 import TrackContext from '../contexts/TrackContext';
 
+// types
 import type { IAlbum, ITrack } from '../types/types';
 
+// interfaces
 interface IProps {
   children: React.ReactNode;
 }

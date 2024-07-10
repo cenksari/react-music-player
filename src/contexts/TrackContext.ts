@@ -1,5 +1,6 @@
 import React from 'react';
 
+// types
 import type { ITrackContext } from '../types/types';
 
 const TrackContext = React.createContext<ITrackContext>({

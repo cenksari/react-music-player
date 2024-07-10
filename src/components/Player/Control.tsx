@@ -1,9 +1,12 @@
 import React from 'react';
 
+// hooks
 import useTrack from '../../hooks/useTrack';
 
+// types
 import type { ITrack, IAlbum } from '../../types/types';
 
+// interfaces
 interface IProps {
   prev?: ITrack | null;
   next?: ITrack | null;

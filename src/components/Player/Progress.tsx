@@ -1,5 +1,6 @@
 import React from 'react';
 
+// interfaces
 interface IProps extends React.ComponentPropsWithoutRef<'input'> {
   duration: number;
   currentProgress: number;
