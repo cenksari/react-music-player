@@ -4,6 +4,7 @@ export interface ITrack {
   name: string;
   duration: string;
   playcount: string;
+  mediaurl: string;
 }
 
 export interface IAlbum {

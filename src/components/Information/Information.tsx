@@ -9,18 +9,11 @@ import type { IAlbum, ITrack } from '../../types/types';
 interface IProps {
   album: IAlbum;
   tracks: ITrack[];
+  handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Information = ({ album, tracks }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, addItem, changeState } = useTrack();
-
-  const handleAddTrack = (): void => {
-    if (!currentTrack) {
-      addItem(tracks[0], album);
-    } else {
-      changeState(currentState === 'playing' ? 'paused' : 'playing');
-    }
-  };
+const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Element => {
+  const { currentState, currentTrack } = useTrack();
 
   return (
     <div className='information flex flex-column flex-gap'>
@@ -51,7 +44,7 @@ const Information = ({ album, tracks }: IProps): React.JSX.Element => {
       <div className='flex flex-h-center'>
         <button
           type='button'
-          onClick={() => handleAddTrack()}
+          onClick={() => handlePlayPause(currentTrack || tracks[0], album)}
           className='play-button flex flex-h-center flex-v-center active-opacity'
         >
           <span className='material-symbols-outlined'>
@@ -66,6 +59,7 @@ const Information = ({ album, tracks }: IProps): React.JSX.Element => {
             key={item.id}
             track={item}
             album={album}
+            handlePlayPause={handlePlayPause}
             selected={currentTrack?.id === item.id}
             playing={currentTrack?.id === item.id && currentState === 'playing'}
           />

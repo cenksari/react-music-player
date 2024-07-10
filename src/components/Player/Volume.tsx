@@ -1,29 +1,27 @@
 import React from 'react';
 
-const Volume = (): React.JSX.Element => {
-  const [mute, setMute] = React.useState<boolean>(false);
-  const [volume, setVolume] = React.useState<number>(50);
+interface IProps {
+  muted: boolean;
+  volume: number;
+  onMutePressed: () => void;
+  onVolumeChange: (volume: number) => void;
+}
 
-  const setMuteState = (): void => {
-    setMute(!mute);
-  };
-
-  const onSliderChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setVolume(Number(e.target.value));
-  };
-
+const Volume = ({ muted, volume, onMutePressed, onVolumeChange }: IProps): React.JSX.Element => {
   return (
     <div className='flex flex-gap flex-v-center flex-h-end'>
       <input
-        type='range'
         min={0}
-        max={100}
+        max={1}
+        step={0.05}
+        type='range'
         value={volume}
-        onChange={onSliderChange}
-        disabled={mute}
+        disabled={muted}
+        aria-label='volume'
+        onChange={(e) => onVolumeChange(Number(e.target.value))}
       />
-      <button type='button' className='active-opacity' onClick={() => setMuteState()}>
-        <span className='material-symbols-outlined'>{mute ? 'volume_off' : 'volume_up'}</span>
+      <button type='button' className='active-opacity' onClick={onMutePressed}>
+        <span className='material-symbols-outlined'>{muted ? 'volume_off' : 'volume_up'}</span>
       </button>
     </div>
   );

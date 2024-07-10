@@ -1,7 +1,5 @@
 import React from 'react';
 
-import useTrack from '../../hooks/useTrack';
-
 import type { IAlbum, ITrack } from '../../types/types';
 
 interface IProps {
@@ -9,24 +7,16 @@ interface IProps {
   album: IAlbum;
   playing?: boolean;
   selected?: boolean;
+  handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
 const TrackLine = ({
   track,
   album,
+  handlePlayPause,
   playing = false,
   selected = false,
 }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, addItem, changeState } = useTrack();
-
-  const handleAddTrack = (): void => {
-    if (currentTrack !== track) {
-      addItem(track, album);
-    } else {
-      changeState(currentState === 'playing' ? 'paused' : 'playing');
-    }
-  };
-
   return (
     <div
       className={
@@ -36,7 +26,7 @@ const TrackLine = ({
       }
     >
       {selected && (
-        <button type='button' onClick={() => handleAddTrack()}>
+        <button type='button' onClick={() => handlePlayPause(track, album)}>
           {playing ? (
             <span className='flex flex-h-center flex-v-center track-number material-symbols-outlined'>
               pause
@@ -50,7 +40,7 @@ const TrackLine = ({
       )}
 
       {!playing && !selected && (
-        <button type='button' onClick={() => handleAddTrack()}>
+        <button type='button' onClick={() => handlePlayPause(track, album)}>
           <span className='number flex flex-h-center flex-v-center track-number'>{track.no}</span>
           <span className='control flex flex-h-center flex-v-center track-number material-symbols-outlined'>
             play_arrow
@@ -59,7 +49,7 @@ const TrackLine = ({
       )}
 
       <div className='flex flex-column flex-grow'>
-        <button type='button' className='name-button' onClick={() => handleAddTrack()}>
+        <button type='button' className='name-button' onClick={() => handlePlayPause(track, album)}>
           {track.name}
         </button>
         <em>{track.playcount} Plays</em>
