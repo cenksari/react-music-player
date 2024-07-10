@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import type { IAlbum, ITrack } from '../../types/types';
 
 interface IProps {
@@ -9,19 +11,19 @@ interface IProps {
 
 const Details = ({ track, album }: IProps): React.JSX.Element => (
   <div className='player-information flex flex-gap flex-grow flex-h-center flex-v-center'>
-    <a href='/' className='active-opacity'>
+    <Link to='/' className='active-opacity'>
       <img width='50' src={album?.image} alt={album?.name} draggable='false' />
-    </a>
+    </Link>
     <div className='track-info flex flex-column'>
       <strong>{track?.name}</strong>
       <span className='flex flex-gap-small'>
-        <a href='/' className='active-opacity'>
+        <Link to='/' className='active-opacity'>
           {album?.artist}
-        </a>
+        </Link>
         &bull;
-        <a href='/' className='active-opacity'>
+        <Link to='/' className='active-opacity'>
           {album?.name}
-        </a>
+        </Link>
       </span>
     </div>
   </div>

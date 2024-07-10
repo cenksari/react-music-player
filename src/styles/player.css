@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
-:root {
-  --progress-width: 0;
-  --buffered-width: 0;
-}
-
 html,
 body,
 header,
@@ -324,6 +319,7 @@ strong,
 
 .information .track {
   font-size: 0.75em;
+  margin-bottom: 3px;
   border-radius: 10px;
   padding: 15px 15px 15px 5px;
 }
@@ -375,6 +371,18 @@ strong,
 .information .play-button span {
   font-size: 2.3em;
   color: #000000;
+}
+
+.information button.small {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  border-radius: 50em;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.information button.small span {
+  font-size: 0.9em;
 }
 
 .playlist {
@@ -483,8 +491,7 @@ audio {
 input[type='range'] {
   --g: 0px; /* gap */
   --l: 3px; /* line thickness */
-  --s: 15px; /* thumb size */
-  --c: #ffffff;
+  --s: 12px; /* thumb size */
 
   width: 100%;
   cursor: pointer;
@@ -495,18 +502,16 @@ input[type='range'] {
   border-radius: 50em;
 }
 
+input[type='range'].red {
+  --c: #ff0000;
+}
+
+input[type='range'].white {
+  --c: #ffffff;
+}
+
 input[type='range'][disabled] {
   opacity: 0.3;
-}
-
-input[type='range']:focus-visible,
-input[type='range']:hover {
-  --p: 25%;
-}
-
-input[type='range']:active,
-input[type='range']:focus-visible {
-  --b: var(--s);
 }
 
 input[type='range' i]::-webkit-slider-thumb {
@@ -516,7 +521,9 @@ input[type='range' i]::-webkit-slider-thumb {
   appearance: none;
   border-radius: 50em;
   background-color: #ffffff;
-  border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0 calc(100vw + var(--g));
+  box-shadow: 0 0 0 var(var(--l)) inset var(--c);
+  border-image: linear-gradient(90deg, var(--c) 50%, #666666 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
+    calc(100vw + var(--g));
 }
 
 .progress {
@@ -527,24 +534,15 @@ input[type='range' i]::-webkit-slider-thumb {
 }
 
 .progress-bar::-webkit-slider-thumb {
-  z-index: 4;
-  position: relative;
-}
-
-.progress-bar::before {
-  z-index: 3;
-  transform: scaleX(var(--progress-width));
-}
-
-.progress-bar::after {
-  z-index: 2;
-  transform-origin: left;
-  transform: scaleX(var(--buffered-width));
+  color: red;
+  background-color: red;
+  border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
+    calc(100vw + var(--g));
 }
 
 @media (max-width: 500px) {
   .image,
-  .image img  {
+  .image img {
     width: 300px;
     height: 300px;
   }

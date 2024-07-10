@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import useTrack from '../../hooks/useTrack';
 
 import TrackLine from '../Track/TrackLine';
@@ -30,18 +32,21 @@ const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Elem
       </div>
 
       <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
-        <a href='/' className='active-opacity'>
+        <Link to='/' className='active-opacity'>
           <h3>{album.artist}</h3>
-        </a>
-        <a href='/' className='active-opacity'>
+        </Link>
+        <Link to='/' className='active-opacity'>
           <span>{album.name}</span>
-        </a>
+        </Link>
         <span className='album-info'>
           {album.songs} Songs - {album.minutes} Minutes
         </span>
       </div>
 
-      <div className='flex flex-h-center'>
+      <div className='flex flex-gap flex-h-center flex-v-center'>
+        <button type='button' className='flex flex-h-center flex-v-center small active-opacity'>
+          <span className='material-symbols-outlined'>share</span>
+        </button>
         <button
           type='button'
           onClick={() => handlePlayPause(currentTrack || tracks[0], album)}
@@ -50,6 +55,9 @@ const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Elem
           <span className='material-symbols-outlined'>
             {currentState === 'playing' ? 'pause' : 'play_arrow'}
           </span>
+        </button>
+        <button type='button' className='flex flex-h-center flex-v-center small active-opacity'>
+          <span className='material-symbols-outlined'>more_vert</span>
         </button>
       </div>
 

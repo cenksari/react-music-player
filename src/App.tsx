@@ -18,15 +18,19 @@ const App = (): React.JSX.Element => {
 
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
+  /**
+   * Handles play and pause functionality for the audio player.
+   *
+   * @param {ITrack} track - The track to be played or paused.
+   * @param {IAlbum} album - The album containing the track.
+   * @returns {void}
+   */
   const handlePlayPause = (track: ITrack, album: IAlbum): void => {
-    if (currentState === 'playing') {
-      audioRef.current?.pause();
-    } else {
-      audioRef.current?.play();
-    }
-
     if (currentTrack?.id !== track.id) {
       addItem(track, album);
+    } else if (currentState === 'playing') {
+      audioRef.current?.pause();
+    } else {
       audioRef.current?.play();
     }
   };

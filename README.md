@@ -12,6 +12,8 @@ If you like this resource, please follow me on GitHub. Thank you!
 
 ![Player](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/player.png)
 
+![Mobile](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/mobile.png)
+
 ## Installation
 
 1. Clone the project:
