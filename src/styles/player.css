@@ -141,6 +141,7 @@ p {
 .material-symbols-outlined {
   user-select: none;
   --webkit-user-select: none;
+  line-height: 0;
   font-weight: normal !important;
   font-variation-settings:
     'FILL' 1,
@@ -351,8 +352,15 @@ strong,
 
 .information .album .album-info {
   margin-top: 5px;
+}
+
+.information .album .album-info em {
   color: #dadada;
   font-size: 0.75em;
+}
+
+.information .album .album-info span {
+  font-size: 1em;
 }
 
 .information .album a:hover {
@@ -362,8 +370,8 @@ strong,
 .information .play-button {
   width: 60px;
   height: 60px;
-  margin-bottom: 10px;
   border-radius: 50em;
+  margin: 0 10px 10px 10px;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -375,7 +383,6 @@ strong,
 .information button.small {
   width: 40px;
   height: 40px;
-  margin: 0 10px;
   border-radius: 50em;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -416,6 +423,7 @@ strong,
 
 .information .playlist .track .name-button {
   font-weight: 600;
+  text-align: left;
   padding-bottom: 5px;
   justify-content: flex-start;
 }

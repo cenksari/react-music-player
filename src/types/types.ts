@@ -3,17 +3,19 @@ export interface ITrack {
   no: number;
   name: string;
   duration: string;
-  playcount: string;
   mediaurl: string;
+  explicit: boolean;
+  playcount: string;
 }
 
 export interface IAlbum {
   id: string;
   name: string;
-  artist: string;
   songs: number;
-  minutes: number;
   image: string;
+  artist: string;
+  minutes: number;
+  explicit: boolean;
   bandimage: string;
 }
 

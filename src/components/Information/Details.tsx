@@ -18,8 +18,15 @@ const Details = ({ album }: IProps): React.JSX.Element => (
     <Link to='/' className='active-opacity'>
       <span>{album.name}</span>
     </Link>
-    <span className='album-info'>
-      {album.songs} Songs - {album.minutes} Minutes
+    <span className='album-info flex flex-gap-small flex-v-center'>
+      {album.explicit && (
+        <span className='material-symbols-outlined' title='Explicit'>
+          explicit
+        </span>
+      )}
+      <em>
+        {album.songs} Songs - {album.minutes} Minutes
+      </em>
     </span>
   </div>
 );

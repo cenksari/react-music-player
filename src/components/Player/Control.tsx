@@ -20,6 +20,7 @@ const Control = ({ prev, next, handlePlayPause }: IProps): React.JSX.Element => 
     <>
       <button
         type='button'
+        title={`Previous song: ${prev?.name}`}
         className={prev ? 'active-opacity' : 'disabled active-opacity'}
         onClick={() => handlePlayPause(prev as ITrack, currentAlbum as IAlbum)}
       >
@@ -36,6 +37,7 @@ const Control = ({ prev, next, handlePlayPause }: IProps): React.JSX.Element => 
       </button>
       <button
         type='button'
+        title={`Next song: ${next?.name}`}
         className={next ? 'active-opacity' : 'disabled active-opacity'}
         onClick={() => handlePlayPause(next as ITrack, currentAlbum as IAlbum)}
       >

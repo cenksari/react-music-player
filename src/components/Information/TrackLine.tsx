@@ -53,7 +53,14 @@ const TrackLine = ({
       <button type='button' className='name-button' onClick={() => handlePlayPause(track, album)}>
         {track.name}
       </button>
-      <em>{track.playcount} Plays</em>
+      <div className='flex flex-gap-small flex-v-center'>
+        {track.explicit && (
+          <span className='material-symbols-outlined' title='Explicit'>
+            explicit
+          </span>
+        )}
+        <em>{track.playcount} Plays</em>
+      </div>
     </div>
     <span>{track.duration}</span>
   </div>
