@@ -38,8 +38,6 @@ const App = (): React.JSX.Element => {
   React.useEffect(() => {
     const audioElement = audioRef?.current;
 
-    audioElement?.load();
-
     audioElement?.addEventListener('loadeddata', handlePlay);
 
     return () => {
@@ -59,6 +57,8 @@ const App = (): React.JSX.Element => {
 
     if (currentTrack?.id !== track.id) {
       addItem(track, album);
+
+      audioElement?.load();
     } else if (currentState === 'playing') {
       audioElement?.pause();
     } else {
