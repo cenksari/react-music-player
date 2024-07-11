@@ -33,6 +33,10 @@ const App = (): React.JSX.Element => {
   const handlePlayPause = (track: ITrack, album: IAlbum): void => {
     if (currentTrack?.id !== track.id) {
       addItem(track, album);
+
+      setTimeout(() => {
+        audioRef.current?.play();
+      }, 500);
     } else if (currentState === 'playing') {
       audioRef.current?.pause();
     } else {
