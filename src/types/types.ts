@@ -1,3 +1,11 @@
+export interface IArtist {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  monthlyListeners: string;
+}
+
 export interface ITrack {
   id: string;
   no: number;
@@ -10,13 +18,13 @@ export interface ITrack {
 
 export interface IAlbum {
   id: string;
+  year: number;
   name: string;
   songs: number;
   image: string;
-  artist: string;
   minutes: number;
+  artist: IArtist;
   explicit: boolean;
-  bandimage: string;
 }
 
 export interface ITrackContext {

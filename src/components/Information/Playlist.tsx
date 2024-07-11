@@ -7,7 +7,7 @@ import useTrack from '../../hooks/useTrack';
 import TrackLine from './TrackLine';
 
 // types
-import type { ITrack, IAlbum } from '../../types/types';
+import type { IAlbum, ITrack } from '../../types/types';
 
 // interfaces
 interface IProps {

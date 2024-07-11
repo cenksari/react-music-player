@@ -13,11 +13,9 @@ interface IProps {
 const Details = ({ album }: IProps): React.JSX.Element => (
   <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
     <Link to='/' className='active-opacity'>
-      <h3>{album.artist}</h3>
+      <h3>{album.artist.name}</h3>
     </Link>
-    <Link to='/' className='active-opacity'>
-      <span>{album.name}</span>
-    </Link>
+    <span>{album.name}</span>
     <span className='album-info flex flex-gap-small flex-v-center'>
       {album.explicit && (
         <span className='material-symbols-outlined' title='Explicit'>
@@ -25,7 +23,7 @@ const Details = ({ album }: IProps): React.JSX.Element => (
         </span>
       )}
       <em>
-        {album.songs} Songs - {album.minutes} Minutes
+        {album.year} - {album.songs} Songs - {album.minutes} Minutes
       </em>
     </span>
   </div>

@@ -1,10 +1,16 @@
 {
   "id": "owzp21",
+  "year": 1990,
   "name": "Seasons In The Abyss",
-  "artist": "Slayer",
   "songs": 10,
   "minutes": 42,
   "explicit": true,
   "image": "https://lh3.googleusercontent.com/FkiLeJISpkE_HiuIwW-pDvvcCF5BbG0js2fLr0wmjC9OXCo6JrQHYLHHFvdoKmXaxr5hBeYGVs0BoSQ=w544-h544-l90-rj",
-  "bandimage": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988"
+  "artist": {
+    "id": "undh23",
+    "name": "Slayer",
+    "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+    "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+    "monthlyListeners": "5M"
+  }
 }

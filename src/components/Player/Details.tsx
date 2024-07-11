@@ -20,7 +20,7 @@ const Details = ({ track, album }: IProps): React.JSX.Element => (
       <strong>{track?.name}</strong>
       <span className='flex flex-gap-small'>
         <Link to='/' className='active-opacity'>
-          {album?.artist}
+          {album?.artist.name}
         </Link>
         &bull;
         <Link to='/' className='active-opacity'>

@@ -4,7 +4,7 @@ import React from 'react';
 import useTrack from '../../hooks/useTrack';
 
 // types
-import type { ITrack, IAlbum } from '../../types/types';
+import type { IAlbum, ITrack } from '../../types/types';
 
 // interfaces
 interface IProps {

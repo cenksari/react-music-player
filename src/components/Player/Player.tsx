@@ -12,7 +12,7 @@ import Progress from './Progress';
 import Duration from './Duration';
 
 // types
-import type { ITrack, IAlbum } from '../../types/types';
+import type { IAlbum, ITrack } from '../../types/types';
 
 // utilities
 import Utils from '../../utils/Utils';

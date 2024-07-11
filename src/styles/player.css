@@ -239,7 +239,7 @@ strong,
 
 .button {
   display: flex;
-  font-weight: 600;
+  font-weight: 500;
   user-select: none;
   border-radius: 10px;
   align-items: center;
@@ -247,6 +247,10 @@ strong,
   --webkit-user-select: none;
   padding: 10px 20px 12px 20px;
   justify-content: space-between;
+}
+
+.button.black {
+  background-color: #000000;
 }
 
 .active-opacity:active {
@@ -303,7 +307,6 @@ strong,
   width: 400px;
   height: 400px;
   margin: 0 auto;
-  cursor: pointer;
   color: #000000;
   perspective: 1000px;
   font-family: monospace;
@@ -335,7 +338,7 @@ strong,
 }
 
 .information .image .back {
-  border-radius: 20px;
+  border-radius: 10px;
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
@@ -344,6 +347,27 @@ strong,
 
 .information .image:hover .image-inner {
   transform: rotateY(-180deg);
+}
+
+.information .image .back .back-info {
+  width: 100%;
+  padding: 10px;
+  background-color: #212121;
+}
+
+.information .image .back .back-info h3 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.information .image .back .back-info p,
+.information .image .back .back-info span {
+  font-size: 0.6em;
+}
+
+.information .image .back .back-info button {
+  font-size: 0.7em;
+  padding: 8px 10px;
 }
 
 .information .album {

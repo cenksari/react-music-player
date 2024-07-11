@@ -9,7 +9,7 @@ import Player from './components/Player/Player';
 import Information from './components/Information/Information';
 
 // types
-import type { ITrack, IAlbum } from './types/types';
+import type { IAlbum, ITrack } from './types/types';
 
 // data
 import trackData from './data/trackData.json';
