@@ -35,8 +35,9 @@ const App = (): React.JSX.Element => {
       addItem(track, album);
 
       setTimeout(() => {
+        audioRef.current?.load();
         audioRef.current?.play();
-      }, 500);
+      }, 950);
     } else if (currentState === 'playing') {
       audioRef.current?.pause();
     } else {
