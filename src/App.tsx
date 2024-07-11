@@ -24,23 +24,6 @@ const App = (): React.JSX.Element => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   /**
-   * Attempts to play the current audio track and handles the play promise.
-   *
-   * @returns {void}
-   */
-  const playTrackPromise = (): void => {
-    setTimeout(() => {
-      audioRef.current?.load();
-
-      const playPromise = audioRef.current?.play();
-
-      if (playPromise) {
-        playPromise.then(null).catch(null);
-      }
-    }, 500);
-  };
-
-  /**
    * Handles play and pause functionality for the audio player.
    *
    * @param {ITrack} track - The track to be played or paused.
@@ -50,12 +33,10 @@ const App = (): React.JSX.Element => {
   const handlePlayPause = (track: ITrack, album: IAlbum): void => {
     if (currentTrack?.id !== track.id) {
       addItem(track, album);
-
-      playTrackPromise();
     } else if (currentState === 'playing') {
       audioRef.current?.pause();
     } else {
-      playTrackPromise();
+      audioRef.current?.play();
     }
   };
 

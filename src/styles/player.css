@@ -138,6 +138,48 @@ p {
   margin-bottom: 10px;
 }
 
+audio {
+  display: none;
+}
+
+input[type='range'] {
+  --g: 0px; /* gap */
+  --l: 3px; /* line thickness */
+  --s: 12px; /* thumb size */
+
+  width: 100%;
+  cursor: pointer;
+  height: var(--s);
+  overflow: hidden;
+  appearance: none;
+  background: none;
+  border-radius: 50em;
+}
+
+input[type='range'].red {
+  --c: #ff0000;
+}
+
+input[type='range'].white {
+  --c: #ffffff;
+}
+
+input[type='range'][disabled] {
+  opacity: 0.3;
+}
+
+input[type='range' i]::-webkit-slider-thumb {
+  transition: 0.3s;
+  aspect-ratio: 1;
+  height: var(--s);
+  appearance: none;
+  border-radius: 50em;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 var(var(--l)) inset var(--c);
+  border-image: linear-gradient(90deg, var(--c) 50%, #666666 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
+    calc(100vw + var(--g));
+}
+
 .material-symbols-outlined {
   user-select: none;
   --webkit-user-select: none;
@@ -148,14 +190,6 @@ p {
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
-}
-
-.container {
-  padding: 0 20px;
-}
-
-.grid {
-  display: grid;
 }
 
 .flex {
@@ -217,14 +251,6 @@ p {
 .no-select {
   user-select: none;
   --webkit-user-select: none;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.center {
-  text-align: center !important;
 }
 
 #root,
@@ -511,56 +537,14 @@ strong,
   text-decoration: underline;
 }
 
-audio {
-  display: none;
-}
-
-input[type='range'] {
-  --g: 0px; /* gap */
-  --l: 3px; /* line thickness */
-  --s: 12px; /* thumb size */
-
-  width: 100%;
-  cursor: pointer;
-  height: var(--s);
-  overflow: hidden;
-  appearance: none;
-  background: none;
-  border-radius: 50em;
-}
-
-input[type='range'].red {
-  --c: #ff0000;
-}
-
-input[type='range'].white {
-  --c: #ffffff;
-}
-
-input[type='range'][disabled] {
-  opacity: 0.3;
-}
-
-input[type='range' i]::-webkit-slider-thumb {
-  transition: 0.3s;
-  aspect-ratio: 1;
-  height: var(--s);
-  appearance: none;
-  border-radius: 50em;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 var(var(--l)) inset var(--c);
-  border-image: linear-gradient(90deg, var(--c) 50%, #666666 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
-    calc(100vw + var(--g));
-}
-
-.progress {
+.player .progress {
   left: 0;
   right: 0;
   top: -14px;
   position: absolute;
 }
 
-.progress-bar::-webkit-slider-thumb {
+.player .progress .progress-bar::-webkit-slider-thumb {
   color: red;
   background-color: red;
   border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
