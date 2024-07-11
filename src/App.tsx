@@ -24,6 +24,28 @@ const App = (): React.JSX.Element => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   /**
+   * Handles the play functionality for the audio element.
+   * Plays the audio if the audioRef is defined and the current audio element is available.
+   *
+   * @returns {void}
+   */
+  const handlePlay = (): void => {
+    const audioElement = audioRef?.current;
+
+    audioElement?.play();
+  };
+
+  React.useEffect(() => {
+    const audioElement = audioRef?.current;
+
+    audioElement?.addEventListener('loadeddata', handlePlay);
+
+    return () => {
+      audioElement?.removeEventListener('loadeddata', handlePlay);
+    };
+  }, [currentTrack]);
+
+  /**
    * Handles play and pause functionality for the audio player.
    *
    * @param {ITrack} track - The track to be played or paused.
@@ -31,12 +53,16 @@ const App = (): React.JSX.Element => {
    * @returns {void}
    */
   const handlePlayPause = (track: ITrack, album: IAlbum): void => {
+    const audioElement = audioRef?.current;
+
     if (currentTrack?.id !== track.id) {
       addItem(track, album);
+
+      audioElement?.load();
     } else if (currentState === 'playing') {
-      audioRef.current?.pause();
+      audioElement?.pause();
     } else {
-      audioRef.current?.play();
+      handlePlay();
     }
   };
 

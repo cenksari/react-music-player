@@ -132,32 +132,41 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
     }
   };
 
+  /**
+   * Handles the event when the audio element can start playing.
+   * Sets the volume of the audio element to the current volume state.
+   *
+   * @param {React.SyntheticEvent<HTMLAudioElement>} e - The synthetic event triggered by the audio element.
+   * @returns {void}
+   */
+  const handleOnCanPlay = (e: React.SyntheticEvent<HTMLAudioElement>): void => {
+    e.currentTarget.volume = volume;
+  };
+
   if (currentTrack && currentAlbum) {
     return (
       <div className='player no-select'>
+        <audio
+          ref={audioRef}
+          preload='auto'
+          onEnded={handleOnEnded}
+          onCanPlay={handleOnCanPlay}
+          onPause={() => changeState('paused')}
+          onPlaying={() => changeState('playing')}
+          onLoadedMetadata={handleOnLoadedMetaData}
+          onDurationChange={(e) => setTrackDuration(e.currentTarget.duration)}
+          onTimeUpdate={(e) => setCurrrentProgress(e.currentTarget.currentTime)}
+        >
+          <track kind='captions' />
+          <source type='audio/mpeg' src={currentTrack.mediaurl} />
+          Your browser does not support the audio tag.
+        </audio>
+
         <Progress
           duration={trackDuration}
           currentProgress={currrentProgress}
           onProgressChange={onProgressChange}
         />
-
-        <audio
-          autoPlay
-          ref={audioRef}
-          preload='metadata'
-          onEnded={handleOnEnded}
-          src={currentTrack.mediaurl}
-          onPause={() => changeState('paused')}
-          onPlaying={() => changeState('playing')}
-          onCanPlay={(e) => {
-            e.currentTarget.volume = volume;
-          }}
-          onLoadedMetadata={handleOnLoadedMetaData}
-          onTimeUpdate={(e) => setCurrrentProgress(e.currentTarget.currentTime)}
-          onDurationChange={(e) => setTrackDuration(e.currentTarget.duration)}
-        >
-          <track kind='captions' />
-        </audio>
 
         <div className='player-container flex flex-gap flex-v-center flex-space-between'>
           <div className='player-buttons flex flex-gap flex-h-start flex-v-center flex-1'>
@@ -178,6 +187,7 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
               onMutePressed={handleMuteChange}
               onVolumeChange={handleVolumeChange}
             />
+
             <Expand />
           </div>
         </div>

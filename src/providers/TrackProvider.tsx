@@ -26,7 +26,6 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
   const addItem = (track: ITrack, album: IAlbum): void => {
     setCurrentTrack(track);
     setCurrentAlbum(album);
-    setCurrentState('playing');
   };
 
   /**
