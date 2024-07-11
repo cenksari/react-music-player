@@ -143,6 +143,7 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
 
         <audio
           controls
+          autoPlay
           ref={audioRef}
           preload='metadata'
           onEnded={handleOnEnded}
