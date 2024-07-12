@@ -480,7 +480,7 @@ strong,
 }
 
 .information .playlist .track {
-  font-size: 0.75em;
+  font-size: 0.8em;
   margin-bottom: 3px;
   border-radius: 10px;
   padding: 15px 15px 15px 5px;
@@ -488,10 +488,6 @@ strong,
 
 .information .playlist .track:hover {
   background-color: rgba(0, 0, 0, 0.2);
-}
-
-.information .playlist .track em {
-  font-size: 0.9em;
 }
 
 .information .playlist .track .track-number {
@@ -604,7 +600,7 @@ strong,
 
 .card .card-info span,
 .card .card-info strong {
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 .artist-cover {
