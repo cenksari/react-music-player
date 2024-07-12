@@ -48,7 +48,7 @@ const Buttons = ({ album }: IProps): React.JSX.Element => {
       <button
         type='button'
         onClick={() => handlePlayPause()}
-        disabled={!album.tracks}
+        disabled={!album.tracks || album.tracks.length === 0}
         className='play-button flex flex-h-center flex-v-center active-opacity'
       >
         <span className='material-symbols-outlined'>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // components
 import Card from './Card';
+import Slider from '../Common/Slider';
 
 // types
 import type { IAlbum } from '../../types/types';
@@ -21,11 +22,11 @@ const Albums = ({ title, albums }: IProps): React.JSX.Element => {
         <h3>{title}</h3>
       </Link>
 
-      <div className='flex flex-gap-large'>
+      <Slider>
         {albums.map((item: IAlbum) => (
           <Card key={item.id} album={item} />
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };

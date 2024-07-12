@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+// hooks
+import useTrack from '../../hooks/useTrack';
+
 // types
 import { IAlbum, ITrack } from '../../types/types';
 
@@ -9,11 +12,22 @@ import { IAlbum, ITrack } from '../../types/types';
 interface IProps {
   album: IAlbum;
   track: ITrack;
+  playing: boolean;
 }
 
-const Song = ({ album, track }: IProps): React.JSX.Element => {
+const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
+  const { playPause } = useTrack();
+
   return (
-    <Link to={`/album/${album.id}`} className='song flex flex-gap flex-v-center active-opacity'>
+    <Link
+      to={`/album/${album.id}`}
+      className='song flex flex-gap flex-v-center active-opacity'
+      onClick={(e) => {
+        e.preventDefault();
+
+        playPause(track, album);
+      }}
+    >
       <div
         className='image'
         style={{
@@ -21,7 +35,7 @@ const Song = ({ album, track }: IProps): React.JSX.Element => {
         }}
       />
       <div className='flex flex-1 flex-gap-small flex-v-center name'>
-        <div className='flex flex-1 flex-v-center'>
+        <div className='flex flex-1 flex-gap-small flex-v-center'>
           <strong>{track.name}</strong>
           {track.explicit && <span className='material-symbols-outlined'>explicit</span>}
         </div>
@@ -40,7 +54,7 @@ const Song = ({ album, track }: IProps): React.JSX.Element => {
       </div>
       <div className='song-actions flex flex-h-center'>
         <div className='song-arrow flex flex-h-center flex-v-center'>
-          <span className='material-symbols-outlined'>play_arrow</span>
+          <span className='material-symbols-outlined'>{playing ? 'pause' : 'play_arrow'}</span>
         </div>
       </div>
     </Link>

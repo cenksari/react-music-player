@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+// hooks
+import useTrack from '../hooks/useTrack';
+
 // components
 import Song from '../components/Artist/Song';
 import Cover from '../components/Artist/Cover';
@@ -11,6 +14,8 @@ import Albums from '../components/Artist/Albums';
 import albumData from '../data/albumData.json';
 
 const ArtistPage = (): React.JSX.Element => {
+  const { currentState, currentTrack } = useTrack();
+
   return (
     <div className='artist flex flex-column flex-gap no-select'>
       <Cover artist={albumData[0].artist} />
@@ -21,11 +26,41 @@ const ArtistPage = (): React.JSX.Element => {
         </Link>
 
         <div className='flex flex-column'>
-          <Song album={albumData[0]} track={albumData[0].tracks[0]} />
-          <Song album={albumData[1]} track={albumData[0].tracks[4]} />
-          <Song album={albumData[1]} track={albumData[0].tracks[6]} />
-          <Song album={albumData[0]} track={albumData[0].tracks[5]} />
-          <Song album={albumData[1]} track={albumData[0].tracks[9]} />
+          <Song
+            album={albumData[0]}
+            track={albumData[0].tracks[0]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[0].tracks[0].id}
+          />
+          <Song
+            album={albumData[2]}
+            track={albumData[2].tracks[4]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[4].id}
+          />
+          <Song
+            album={albumData[1]}
+            track={albumData[1].tracks[0]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[1].tracks[0].id}
+          />
+          <Song
+            album={albumData[2]}
+            track={albumData[2].tracks[8]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[8].id}
+          />
+          <Song
+            album={albumData[0]}
+            track={albumData[0].tracks[6]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[0].tracks[6].id}
+          />
+          <Song
+            album={albumData[3]}
+            track={albumData[3].tracks[5]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[3].tracks[5].id}
+          />
+          <Song
+            album={albumData[2]}
+            track={albumData[2].tracks[9]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[9].id}
+          />
         </div>
       </div>
 

@@ -1,5 +1,122 @@
 [
   {
+    "id": "amzk19",
+    "year": 1986,
+    "name": "Reign In Blood",
+    "songs": 11,
+    "minutes": 31,
+    "explicit": true,
+    "image": "https://lh3.googleusercontent.com/8d8NL5xWdXighL5f_6C_4E8LBT4RzffznyTleVSNWT0tClyVbcuRCfSaSdHdYkzy7zD3-UXt1KR_hxsD=w544-h544-l90-rj",
+    "artist": {
+      "id": "undh23",
+      "name": "Slayer",
+      "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+      "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+      "monthlyListeners": "5M"
+    },
+    "tracks": [
+      {
+        "id": "zcbm38",
+        "no": 1,
+        "name": "Angel Of Death",
+        "duration": "4:59",
+        "playcount": "60M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "oklm29",
+        "no": 2,
+        "name": "Piece By Piece",
+        "duration": "4:59",
+        "playcount": "2M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "uhvk54",
+        "no": 3,
+        "name": "Necrophobic",
+        "duration": "4:59",
+        "playcount": "1.3M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "epml10",
+        "no": 4,
+        "name": "Altar Of Sacrifice",
+        "duration": "4:59",
+        "playcount": "1.5M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "wsxd22",
+        "no": 5,
+        "name": "Jesus Saves",
+        "duration": "4:59",
+        "playcount": "1.7M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "qpaa49",
+        "no": 6,
+        "name": "Criminally Insane",
+        "duration": "4:59",
+        "playcount": "5M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "zpdl43",
+        "no": 7,
+        "name": "Reborn",
+        "duration": "4:59",
+        "playcount": "881K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "vghr87",
+        "no": 8,
+        "name": "Epidemic",
+        "duration": "4:59",
+        "playcount": "1.6M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "aoek59",
+        "no": 9,
+        "name": "Postmortem",
+        "duration": "4:59",
+        "playcount": "3.2M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "dskm39",
+        "no": 10,
+        "name": "Raining Blood",
+        "duration": "4:59",
+        "playcount": "82M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "reko30",
+        "no": 11,
+        "name": "Aggressive Perfector",
+        "duration": "4:59",
+        "playcount": "831K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      }
+    ]
+  },
+  {
     "id": "kwms71",
     "year": 1988,
     "name": "South of Heaven",
@@ -210,6 +327,258 @@
         "name": "Seasons In The Abyss",
         "duration": "6:38",
         "playcount": "78M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      }
+    ]
+  },
+  {
+    "id": "pueq87",
+    "year": 1994,
+    "name": "Divine Intervention",
+    "songs": 10,
+    "minutes": 36,
+    "explicit": true,
+    "image": "https://lh3.googleusercontent.com/SRGpK0hBMqct1h8XeHM8kLjwFnWrdCBH-lVX4a6m4vCZnZEbOupgktniR2LZdLYozYD_-CWCeE1yhRc=w544-h544-l90-rj",
+    "artist": {
+      "id": "undh23",
+      "name": "Slayer",
+      "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+      "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+      "monthlyListeners": "5M"
+    },
+    "tracks": [
+      {
+        "id": "dgjl56",
+        "no": 1,
+        "name": "Killing Fields",
+        "duration": "3:58",
+        "playcount": "3.7M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "zfhk28",
+        "no": 2,
+        "name": "Sex. Murder. Art.",
+        "duration": "1:51",
+        "playcount": "592K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "yabi38",
+        "no": 3,
+        "name": "Fictional Reality",
+        "duration": "3:38",
+        "playcount": "774K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "wcno93",
+        "no": 4,
+        "name": "Dittohead",
+        "duration": "2:31",
+        "playcount": "3.4M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "pqla93",
+        "no": 5,
+        "name": "Divine Intervention",
+        "duration": "5:34",
+        "playcount": "1.8M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "jfur84",
+        "no": 6,
+        "name": "Circle Of Beliefs",
+        "duration": "4:30",
+        "playcount": "423K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "plaz36",
+        "no": 7,
+        "name": "SS-3",
+        "duration": "4:07",
+        "playcount": "868K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "ilop93",
+        "no": 8,
+        "name": "Serenity In Murder",
+        "duration": "2:37",
+        "playcount": "2.5M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "xqyj11",
+        "no": 9,
+        "name": "213",
+        "duration": "4:53",
+        "playcount": "2.4M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "unvb84",
+        "no": 10,
+        "name": "Mind Control",
+        "duration": "3:05",
+        "playcount": "383K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      }
+    ]
+  },
+  {
+    "id": "reyu74",
+    "year": 1996,
+    "name": "Undisputed Attitude",
+    "songs": 14,
+    "minutes": 33,
+    "explicit": true,
+    "image": "https://lh3.googleusercontent.com/RJTxDKTxvlKCRirI5pynqYKj8QBcxnJ3L7USpe5i9w1RGFEi650wgXcyRfsZjpZZjA41JZdT8vMCi0PV=w544-h544-l90-rj",
+    "artist": {
+      "id": "undh23",
+      "name": "Slayer",
+      "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+      "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+      "monthlyListeners": "5M"
+    },
+    "tracks": [
+      {
+        "id": "okdc99",
+        "no": 1,
+        "name": "Disintegration/Free Money",
+        "duration": "1:41",
+        "playcount": "626K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "nqmk23",
+        "no": 2,
+        "name": "Verbal Abuse/Leeches",
+        "duration": "1:58",
+        "playcount": "387K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "unrl39",
+        "no": 3,
+        "name": "Abolish Government/Superficial Love",
+        "duration": "1:48",
+        "playcount": "603K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "wcno93",
+        "no": 4,
+        "name": "Can't Stand You",
+        "duration": "1:28",
+        "playcount": "384K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "yhna89",
+        "no": 5,
+        "name": "Ddamn",
+        "duration": "1:02",
+        "playcount": "354K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "lkjh66",
+        "no": 6,
+        "name": "Guilty Of Being White",
+        "duration": "1:07",
+        "playcount": "691K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "esko83",
+        "no": 7,
+        "name": "I Hate You",
+        "duration": "2:17",
+        "playcount": "1.4M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "relq12",
+        "no": 8,
+        "name": "Filler/I Don't Want To Hear It",
+        "duration": "2:29",
+        "playcount": "458K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "yqpf83",
+        "no": 9,
+        "name": "Spiritual Law",
+        "duration": "3:01",
+        "playcount": "341K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "oros19",
+        "no": 10,
+        "name": "Mr. Freeze",
+        "duration": "2:24",
+        "playcount": "411K",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "pezo30",
+        "no": 11,
+        "name": "Violent Pacification",
+        "duration": "2:39",
+        "playcount": "298K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "kala49",
+        "no": 12,
+        "name": "Richard Hung Himself",
+        "duration": "3:22",
+        "playcount": "576K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "many82",
+        "no": 13,
+        "name": "I'm Gonna Be Your God",
+        "duration": "2:59",
+        "playcount": "716K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      },
+      {
+        "id": "bast47",
+        "no": 14,
+        "name": "Gemini",
+        "duration": "4:53",
+        "playcount": "1.6M",
         "explicit": false,
         "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
       }

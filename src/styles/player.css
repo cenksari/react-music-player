@@ -298,9 +298,9 @@ strong,
   border-radius: 10px;
   align-items: center;
   text-decoration: none;
+  justify-content: center;
   --webkit-user-select: none;
   padding: 10px 20px 12px 20px;
-  justify-content: space-between;
 }
 
 .button.black {
@@ -676,6 +676,68 @@ strong,
   text-decoration: underline;
 }
 
+.scroll-container {
+  position: relative;
+}
+
+.scroll-container .left-arrow,
+.scroll-container .right-arrow {
+  top: 75px;
+  position: absolute;
+}
+
+.scroll-container .left-arrow {
+  left: 0;
+  z-index: 9999;
+  margin-left: 2px;
+}
+
+.scroll-container .right-arrow {
+  right: 0;
+  z-index: 9998;
+  margin-right: 2px;
+}
+
+.scroll-container .left-arrow button,
+.scroll-container .right-arrow button {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50em;
+}
+
+.scroll-container .left-arrow button span,
+.scroll-container .right-arrow button span {
+  font-size: 1.75em;
+}
+
+.scrollable {
+  width: 100%;
+  user-select: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.scrollable::-webkit-scrollbar {
+  height: 1px;
+  background-color: transparent;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  height: 1px;
+  background-color: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  height: 1px;
+  background-color: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb:window-inactive {
+  background: transparent;
+}
+
 @media (max-width: 750px) {
   .song .song-actions {
     display: none;
@@ -718,7 +780,7 @@ strong,
   }
 
   .song {
-    font-size: 0.85em;
+    font-size: 1em;
   }
 }
 
