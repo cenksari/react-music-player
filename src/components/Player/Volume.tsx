@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Volume = ({ muted, volume, onMutePressed, onVolumeChange }: IProps): React.JSX.Element => (
-  <div className='flex flex-gap flex-v-center flex-h-end'>
+  <div className='volume-control flex flex-gap flex-v-center flex-h-end'>
     <input
       min={0}
       max={1}

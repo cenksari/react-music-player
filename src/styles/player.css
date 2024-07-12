@@ -551,6 +551,10 @@ strong,
     calc(100vw + var(--g));
 }
 
+.player .expand-button span {
+  font-size: 1.7em;
+}
+
 @media (max-width: 600px) {
   .information .image,
   .information .image img {
@@ -568,5 +572,11 @@ strong,
 
   .player-controls input[type='range'] {
     width: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  .player .volume-control {
+    display: none;
   }
 }

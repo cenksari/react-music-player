@@ -187,7 +187,7 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
 
           <Details track={currentTrack} album={currentAlbum} />
 
-          <div className='player-controls flex flex-gap flex-h-end flex-v-center flex-1'>
+          <div className='player-controls flex flex-gap-medium flex-h-end flex-v-center flex-1'>
             <Volume
               muted={muted}
               volume={volume}
