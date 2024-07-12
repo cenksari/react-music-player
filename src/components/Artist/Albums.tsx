@@ -2,41 +2,28 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+// components
+import Card from './Card';
+
 // types
 import type { IAlbum } from '../../types/types';
 
 // interfaces
 interface IProps {
+  title: string;
   albums: IAlbum[];
 }
 
-const Albums = ({ albums }: IProps): React.JSX.Element => {
+const Albums = ({ title, albums }: IProps): React.JSX.Element => {
   return (
     <div className='container flex flex-column flex-gap'>
       <Link to='/' className='active-opacity underline'>
-        <h3>Albums</h3>
+        <h3>{title}</h3>
       </Link>
 
-      <div className='flex flex-gap'>
+      <div className='flex flex-gap-large'>
         {albums.map((item: IAlbum) => (
-          <Link key={item.id} to={`/album/${item.id}`} className='active-opacity'>
-            <div className='card'>
-              <div className='card-image' style={{ backgroundImage: `url(${item.image})` }} />
-              <div className='card-info flex flex-column flex-gap-small'>
-                <strong>{item.name}</strong>
-                <div className='flex flex-gap-medium flex-h-center flex-v-center'>
-                  {item.explicit && (
-                    <span className='material-symbols-outlined' title='Explicit'>
-                      explicit
-                    </span>
-                  )}
-                  <span>
-                    {item.year} - {item.songs} songs
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Link>
+          <Card key={item.id} album={item} />
         ))}
       </div>
     </div>

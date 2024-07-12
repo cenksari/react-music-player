@@ -21,15 +21,17 @@ const ArtistPage = (): React.JSX.Element => {
         </Link>
 
         <div className='flex flex-column'>
-          <Song />
-          <Song />
-          <Song />
-          <Song />
-          <Song />
+          <Song album={albumData[0]} track={albumData[0].tracks[0]} />
+          <Song album={albumData[1]} track={albumData[0].tracks[4]} />
+          <Song album={albumData[1]} track={albumData[0].tracks[6]} />
+          <Song album={albumData[0]} track={albumData[0].tracks[5]} />
+          <Song album={albumData[1]} track={albumData[0].tracks[9]} />
         </div>
       </div>
 
-      <Albums albums={albumData} />
+      <Albums title='Albums' albums={albumData} />
+
+      <Albums title='Appeared on' albums={albumData} />
     </div>
   );
 };

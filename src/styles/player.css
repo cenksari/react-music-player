@@ -50,7 +50,7 @@ polygon {
   outline: none;
   color: #ffffff;
   appearance: none;
-  font-size: 1.03em;
+  font-size: 1.02em;
   font-style: normal;
   list-style-type: none;
   box-sizing: border-box;
@@ -200,6 +200,22 @@ input[type='range' i]::-webkit-slider-thumb {
   flex: 1;
 }
 
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
 .flex-v-end {
   align-items: flex-end;
 }
@@ -214,6 +230,10 @@ input[type='range' i]::-webkit-slider-thumb {
 
 .flex-gap {
   gap: 15px;
+}
+
+.flex-gap-large {
+  gap: 20px;
 }
 
 .flex-gap-small {
@@ -293,8 +313,10 @@ strong,
 }
 
 .container {
-  width: 900px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 10px;
+  max-width: 900px;
 }
 
 .cover {
@@ -360,11 +382,11 @@ strong,
   height: 100%;
   overflow: hidden;
   position: absolute;
+  border-radius: 5px;
   backface-visibility: hidden;
 }
 
 .information .image .back {
-  border-radius: 10px;
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
@@ -569,6 +591,7 @@ strong,
 .card .card-image {
   width: 180px;
   height: 180px;
+  border-radius: 5px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -603,7 +626,6 @@ strong,
 }
 
 .artist-gradient {
-  padding: 20px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(17, 17, 17, 1) 100%);
 }
 
@@ -619,6 +641,7 @@ strong,
 .song .image {
   width: 35px;
   height: 35px;
+  border-radius: 3px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -653,6 +676,28 @@ strong,
   text-decoration: underline;
 }
 
+@media (max-width: 750px) {
+  .song .song-actions {
+    display: none;
+  }
+
+  .song .image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .song .name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .song .artist,
+  .song .play-count,
+  .song .album-name {
+    flex: unset;
+  }
+}
+
 @media (max-width: 600px) {
   .information .image,
   .information .image img {
@@ -671,10 +716,18 @@ strong,
   .player-controls input[type='range'] {
     width: 50%;
   }
+
+  .song {
+    font-size: 0.85em;
+  }
 }
 
 @media (max-width: 450px) {
   .player .volume-control {
+    display: none;
+  }
+
+  .song .play-count {
     display: none;
   }
 }
