@@ -15,11 +15,10 @@ import type { IAlbum, ITrack } from '../../types/types';
 // interfaces
 interface IProps {
   album: IAlbum;
-  tracks: ITrack[];
   handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Element => {
+const Information = ({ album, handlePlayPause }: IProps): React.JSX.Element => {
   const { currentTrack } = useTrack();
 
   return (
@@ -28,9 +27,9 @@ const Information = ({ album, tracks, handlePlayPause }: IProps): React.JSX.Elem
 
       <Details album={album} />
 
-      <Buttons handlePlayPause={() => handlePlayPause(currentTrack || tracks[0], album)} />
+      <Buttons handlePlayPause={() => handlePlayPause(currentTrack || album.tracks[0], album)} />
 
-      <Playlist album={album} tracks={tracks} handlePlayPause={handlePlayPause} />
+      <Playlist album={album} handlePlayPause={handlePlayPause} />
     </div>
   );
 };

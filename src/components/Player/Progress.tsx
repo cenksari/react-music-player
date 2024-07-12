@@ -10,8 +10,8 @@ const Progress = ({ duration, currentProgress, onProgressChange }: IProps): Reac
   <div className='progress'>
     <input
       min={0}
-      max={duration}
       type='range'
+      max={duration}
       name='progress'
       value={currentProgress}
       className='progress-bar red'

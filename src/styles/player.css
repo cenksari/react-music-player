@@ -284,27 +284,6 @@ strong,
   transition: 0.2s all ease;
 }
 
-.scroller-vertical::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 5px;
-}
-
-.scroller-vertical::-webkit-scrollbar-track {
-  width: 5px;
-  border-radius: 5px;
-}
-
-.scroller-vertical::-webkit-scrollbar-thumb {
-  width: 5px;
-  border-radius: 5px;
-  background-color: #999999;
-}
-
-.scroller-vertical::-webkit-scrollbar-thumb:window-inactive {
-  border-radius: 5px;
-  background-color: #999999;
-}
-
 .cover {
   top: 0;
   left: 0;
@@ -378,7 +357,7 @@ strong,
 .information .image .back .back-info {
   width: 100%;
   padding: 10px;
-  background-color: #212121;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .information .image .back .back-info h3 {

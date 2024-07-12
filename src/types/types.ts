@@ -24,6 +24,7 @@ export interface IAlbum {
   image: string;
   minutes: number;
   artist: IArtist;
+  tracks: ITrack[];
   explicit: boolean;
 }
 

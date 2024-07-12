@@ -1,20 +1,18 @@
 import React from 'react';
 
 // types
-import type { IAlbum, ITrack } from '../../types/types';
+import type { ITrack } from '../../types/types';
 
 // interfaces
 interface IProps {
   track: ITrack;
-  album: IAlbum;
   playing?: boolean;
   selected?: boolean;
-  handlePlayPause: (track: ITrack, album: IAlbum) => void;
+  handlePlayPause: () => void;
 }
 
 const TrackLine = ({
   track,
-  album,
   handlePlayPause,
   playing = false,
   selected = false,
@@ -27,7 +25,7 @@ const TrackLine = ({
     }
   >
     {selected && (
-      <button type='button' onClick={() => handlePlayPause(track, album)}>
+      <button type='button' onClick={handlePlayPause}>
         {playing ? (
           <span className='flex flex-h-center flex-v-center track-number material-symbols-outlined'>
             pause
@@ -41,7 +39,7 @@ const TrackLine = ({
     )}
 
     {!playing && !selected && (
-      <button type='button' onClick={() => handlePlayPause(track, album)}>
+      <button type='button' onClick={handlePlayPause}>
         <span className='number flex flex-h-center flex-v-center track-number'>{track.no}</span>
         <span className='control flex flex-h-center flex-v-center track-number material-symbols-outlined'>
           play_arrow
@@ -50,7 +48,7 @@ const TrackLine = ({
     )}
 
     <div className='flex flex-column flex-grow'>
-      <button type='button' className='name-button' onClick={() => handlePlayPause(track, album)}>
+      <button type='button' className='name-button' onClick={handlePlayPause}>
         {track.name}
       </button>
       <div className='flex flex-gap-small flex-v-center'>

@@ -19,12 +19,12 @@ import Utils from '../../utils/Utils';
 
 // interfaces
 interface IProps {
-  tracks?: ITrack[];
+  album?: IAlbum;
   audioRef?: React.RefObject<HTMLAudioElement> | null;
   handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Element | null => {
+const Player = ({ album, audioRef, handlePlayPause }: IProps): React.JSX.Element | null => {
   const [volume, setVolume] = React.useState<number>(0.5);
   const [muted, setMuted] = React.useState<boolean>(false);
   const [prev, setPrev] = React.useState<ITrack | null>(null);
@@ -36,19 +36,19 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
   const { currentTrack, currentAlbum, removeItem, changeState } = useTrack();
 
   React.useEffect(() => {
-    if (tracks) {
-      const currentIndex = tracks.findIndex((track) => track.id === currentTrack?.id);
+    if (album?.tracks) {
+      const currentIndex = album.tracks.findIndex((track) => track.id === currentTrack?.id);
 
       const prevIndex = currentIndex - 1;
       const nextIndex = currentIndex + 1;
 
-      setPrev(tracks[prevIndex]);
-      setNext(tracks[nextIndex]);
+      setPrev(album.tracks[prevIndex]);
+      setNext(album.tracks[nextIndex]);
 
       setTrackDuration(0);
       setCurrrentProgress(0);
     }
-  }, [tracks, currentTrack?.id]);
+  }, [album?.tracks, currentTrack?.id]);
 
   /**
    * Handles the event when the current track ends.

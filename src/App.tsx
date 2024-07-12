@@ -12,7 +12,6 @@ import Information from './components/Information/Information';
 import type { IAlbum, ITrack } from './types/types';
 
 // data
-import trackData from './data/trackData.json';
 import albumData from './data/albumData.json';
 
 // styles
@@ -68,8 +67,8 @@ const App = (): React.JSX.Element => {
 
   return (
     <Cover image={albumData.image}>
-      <Player audioRef={audioRef} tracks={trackData} handlePlayPause={handlePlayPause} />
-      <Information album={albumData} tracks={trackData} handlePlayPause={handlePlayPause} />
+      <Information album={albumData} handlePlayPause={handlePlayPause} />
+      <Player audioRef={audioRef} album={albumData} handlePlayPause={handlePlayPause} />
     </Cover>
   );
 };
