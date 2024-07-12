@@ -710,8 +710,8 @@ strong,
 
 .scrollable {
   width: 100%;
+  overflow-x: auto;
   user-select: none;
-  overflow-x: hidden;
   white-space: nowrap;
 }
 
