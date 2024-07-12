@@ -13,8 +13,17 @@ const formatTime = (duration: number): string => {
   return formatted;
 };
 
+/**
+ * Shuffles an array in place.
+ *
+ * @param {any[]} array - The array to be shuffled.
+ * @returns {any[]} The shuffled array.
+ */
+const shuffleArray = (array: any[]): any[] => array?.sort(() => 0.5 - Math.random());
+
 const Utils = {
   formatTime,
+  shuffleArray,
 };
 
 export default Utils;
