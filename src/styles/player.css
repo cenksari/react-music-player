@@ -392,8 +392,9 @@ strong,
 }
 
 .information .image .back .back-info button {
-  font-size: 0.7em;
-  padding: 8px 10px;
+  font-size: 0.6em;
+  padding: 6px 15px;
+  border: 1px solid #333333;
 }
 
 .information .album {
