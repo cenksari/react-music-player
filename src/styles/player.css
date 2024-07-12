@@ -735,10 +735,6 @@ strong,
 }
 
 @media (max-width: 750px) {
-  .song .song-actions {
-    display: none;
-  }
-
   .song .image {
     width: 45px;
     height: 45px;
