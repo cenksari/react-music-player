@@ -19,11 +19,11 @@ const Details = ({ track, album }: IProps): React.JSX.Element => (
     <div className='track-info flex flex-column'>
       <strong>{track?.name}</strong>
       <span className='flex flex-gap-small'>
-        <Link to='/' className='active-opacity'>
+        <Link to={`/artist/${album?.artist.id}`} className='active-opacity'>
           {album?.artist.name}
         </Link>
         &bull;
-        <Link to='/' className='active-opacity'>
+        <Link to={`/album/${album?.id}`} className='active-opacity'>
           {album?.name}
         </Link>
       </span>

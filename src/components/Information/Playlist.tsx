@@ -12,20 +12,19 @@ import type { IAlbum, ITrack } from '../../types/types';
 // interfaces
 interface IProps {
   album: IAlbum;
-  handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Playlist = ({ album, handlePlayPause }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack } = useTrack();
+const Playlist = ({ album }: IProps): React.JSX.Element => {
+  const { currentState, currentTrack, playPause } = useTrack();
 
   return (
     <div className='playlist'>
-      {album.tracks.map((item: ITrack) => (
+      {album.tracks?.map((item: ITrack) => (
         <TrackLine
           track={item}
           key={item.id}
           selected={currentTrack?.id === item.id}
-          handlePlayPause={() => handlePlayPause(item, album)}
+          handlePlayPause={() => playPause(item, album)}
           playing={currentTrack?.id === item.id && currentState === 'playing'}
         />
       ))}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 // types
 import type { IAlbum } from '../../types/types';
 
@@ -26,9 +28,9 @@ const Image = ({ album }: IProps): React.JSX.Element => (
               {album.artist.monthlyListeners} monthly listeners
             </span>
             <div className='flex flex-1 flex-gap-medium flex-h-end flex-v-center'>
-              <button type='button' className='button black active-opacity'>
+              <Link to={`/artist/${album.artist.id}`} className='button black active-opacity'>
                 Details
-              </button>
+              </Link>
               <button type='button' className='button black active-opacity'>
                 Follow
               </button>

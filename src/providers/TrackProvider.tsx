@@ -12,6 +12,8 @@ interface IProps {
 }
 
 const TrackProvider = ({ children }: IProps): React.JSX.Element => {
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+
   const [currentState, setCurrentState] = React.useState<string | null>(null);
   const [currentTrack, setCurrentTrack] = React.useState<ITrack | null>(null);
   const [currentAlbum, setCurrentAlbum] = React.useState<IAlbum | null>(null);
@@ -49,9 +51,64 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
     setCurrentState(state);
   };
 
+  /**
+   * Handles the play functionality for the audio element.
+   * Plays the audio if the audioRef is defined and the current audio element is available.
+   *
+   * @returns {void}
+   */
+  const handlePlay = (): void => {
+    const audioElement = audioRef?.current;
+
+    audioElement?.play().then(null).catch(null);
+  };
+
+  React.useEffect(() => {
+    const audioElement = audioRef?.current;
+
+    audioElement?.addEventListener('loadeddata', handlePlay);
+
+    return () => {
+      audioElement?.removeEventListener('loadeddata', handlePlay);
+    };
+  }, [currentTrack]);
+
+  /**
+   * Handles play and pause functionality for the audio player.
+   *
+   * @param {ITrack} track - The track to be played or paused.
+   * @param {IAlbum} album - The album containing the track.
+   * @returns {void}
+   */
+  const playPause = React.useCallback(
+    (track: ITrack, album: IAlbum): void => {
+      const audioElement = audioRef?.current;
+
+      if (currentTrack?.id !== track.id) {
+        addItem(track, album);
+
+        audioElement?.load();
+      } else if (currentState === 'playing') {
+        audioElement?.pause();
+      } else {
+        handlePlay();
+      }
+    },
+    [currentState, currentTrack?.id]
+  );
+
   const providerValue = React.useMemo(
-    () => ({ currentState, currentTrack, currentAlbum, addItem, removeItem, changeState }),
-    [currentState, currentTrack, currentAlbum]
+    () => ({
+      audioRef,
+      currentState,
+      currentTrack,
+      currentAlbum,
+      addItem,
+      playPause,
+      removeItem,
+      changeState,
+    }),
+    [currentState, currentTrack, currentAlbum, playPause]
   );
 
   return <TrackContext.Provider value={providerValue}>{children}</TrackContext.Provider>;

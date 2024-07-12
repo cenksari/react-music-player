@@ -1,8 +1,5 @@
 import React from 'react';
 
-// hooks
-import useTrack from '../../hooks/useTrack';
-
 // components
 import Image from './Image';
 import Details from './Details';
@@ -10,28 +7,23 @@ import Buttons from './Buttons';
 import Playlist from './Playlist';
 
 // types
-import type { IAlbum, ITrack } from '../../types/types';
+import type { IAlbum } from '../../types/types';
 
 // interfaces
 interface IProps {
   album: IAlbum;
-  handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Information = ({ album, handlePlayPause }: IProps): React.JSX.Element => {
-  const { currentTrack } = useTrack();
+const Information = ({ album }: IProps): React.JSX.Element => (
+  <div className='information flex flex-column flex-gap no-select'>
+    <Image album={album} />
 
-  return (
-    <div className='information flex flex-column flex-gap no-select'>
-      <Image album={album} />
+    <Details album={album} />
 
-      <Details album={album} />
+    <Buttons album={album} />
 
-      <Buttons handlePlayPause={() => handlePlayPause(currentTrack || album.tracks[0], album)} />
-
-      <Playlist album={album} handlePlayPause={handlePlayPause} />
-    </div>
-  );
-};
+    <Playlist album={album} />
+  </div>
+);
 
 export default Information;

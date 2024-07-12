@@ -3,13 +3,31 @@ import React from 'react';
 // hooks
 import useTrack from '../../hooks/useTrack';
 
+// types
+import type { IAlbum } from '../../types/types';
+
 // interfaces
 interface IProps {
-  handlePlayPause: () => void;
+  album: IAlbum;
 }
 
-const Buttons = ({ handlePlayPause }: IProps): React.JSX.Element => {
-  const { currentState } = useTrack();
+const Buttons = ({ album }: IProps): React.JSX.Element => {
+  const { currentState, currentTrack, currentAlbum, playPause } = useTrack();
+
+  /**
+   * Handles the play/pause functionality for the album.
+   * If the current album is not the same as the provided album, it starts playing the first track of the provided album.
+   * If the current album is the same as the provided album, it toggles play/pause for the current track or the first track of the album.
+   */
+  const handlePlayPause = () => {
+    if (album.tracks) {
+      if (currentAlbum?.id !== album.id) {
+        playPause(album.tracks[0], album);
+      } else {
+        playPause(currentTrack || album.tracks[0], currentAlbum || album);
+      }
+    }
+  };
 
   return (
     <div className='flex flex-gap flex-h-center flex-v-center'>
@@ -29,11 +47,12 @@ const Buttons = ({ handlePlayPause }: IProps): React.JSX.Element => {
       </button>
       <button
         type='button'
-        onClick={handlePlayPause}
+        onClick={() => handlePlayPause()}
+        disabled={!album.tracks}
         className='play-button flex flex-h-center flex-v-center active-opacity'
       >
         <span className='material-symbols-outlined'>
-          {currentState === 'playing' ? 'pause' : 'play_arrow'}
+          {currentAlbum?.id === album.id && currentState === 'playing' ? 'pause' : 'play_arrow'}
         </span>
       </button>
       <button

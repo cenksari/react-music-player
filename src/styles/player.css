@@ -59,7 +59,7 @@ polygon {
 
 html,
 body {
-  background-color: #030303;
+  background-color: #111111;
 }
 
 ::selection {
@@ -253,6 +253,14 @@ input[type='range' i]::-webkit-slider-thumb {
   --webkit-user-select: none;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px #000000;
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
 #root,
 .full-h {
   height: 100vh;
@@ -284,6 +292,11 @@ strong,
   transition: 0.2s all ease;
 }
 
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
 .cover {
   top: 0;
   left: 0;
@@ -297,6 +310,14 @@ strong,
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.artist {
+  left: 50%;
+  width: 100%;
+  position: absolute;
+  padding: 0 0 110px 0;
+  transform: translateX(-50%);
 }
 
 .information {
@@ -370,6 +391,7 @@ strong,
   font-size: 0.6em;
 }
 
+.information .image .back .back-info a,
 .information .image .back .back-info button {
   font-size: 0.6em;
   padding: 6px 15px;
@@ -408,6 +430,11 @@ strong,
 .information .play-button span {
   font-size: 2.3em;
   color: #000000;
+}
+
+.information .play-button[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .information button.small {
@@ -533,6 +560,97 @@ strong,
 
 .player .expand-button span {
   font-size: 1.7em;
+}
+
+.card {
+  width: 180px;
+}
+
+.card .card-image {
+  width: 180px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card .card-info {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.card .card-info span,
+.card .card-info strong {
+  font-size: 0.7em;
+}
+
+.artist-cover {
+  width: 100%;
+  height: 350px;
+  font-size: 0.9em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.artist-cover h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.artist-cover button {
+  border: 1px solid #333333;
+}
+
+.artist-gradient {
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(17, 17, 17, 1) 100%);
+}
+
+.song {
+  padding: 10px 0;
+  border-bottom: 1px solid #222222;
+}
+
+.song:last-child {
+  border-bottom: none;
+}
+
+.song .image {
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.song .name strong,
+.song .artist-name span,
+.song .play-count span,
+.song .album-name span {
+  font-size: 0.8em;
+}
+
+.song .artist-name span,
+.song .play-count span,
+.song .album-name span {
+  color: #999999;
+}
+
+.song .song-arrow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50em;
+  transition: 0.3s all ease;
+  background-color: #222222;
+}
+
+.song:hover .song-arrow {
+  background-color: #444444;
+}
+
+.song:hover .name strong {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {

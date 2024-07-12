@@ -12,7 +12,7 @@ interface IProps {
 
 const Details = ({ album }: IProps): React.JSX.Element => (
   <div className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
-    <Link to='/' className='active-opacity'>
+    <Link to={`/artist/${album?.artist.id}`} className='active-opacity'>
       <h3>{album.artist.name}</h3>
     </Link>
     <span>{album.name}</span>

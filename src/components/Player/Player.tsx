@@ -12,19 +12,12 @@ import Progress from './Progress';
 import Duration from './Duration';
 
 // types
-import type { IAlbum, ITrack } from '../../types/types';
+import type { ITrack } from '../../types/types';
 
 // utilities
 import Utils from '../../utils/Utils';
 
-// interfaces
-interface IProps {
-  album?: IAlbum;
-  audioRef?: React.RefObject<HTMLAudioElement> | null;
-  handlePlayPause: (track: ITrack, album: IAlbum) => void;
-}
-
-const Player = ({ album, audioRef, handlePlayPause }: IProps): React.JSX.Element | null => {
+const Player = (): React.JSX.Element | null => {
   const [volume, setVolume] = React.useState<number>(0.5);
   const [muted, setMuted] = React.useState<boolean>(false);
   const [prev, setPrev] = React.useState<ITrack | null>(null);
@@ -33,22 +26,22 @@ const Player = ({ album, audioRef, handlePlayPause }: IProps): React.JSX.Element
   const [trackDuration, setTrackDuration] = React.useState<number>(0);
   const [currrentProgress, setCurrrentProgress] = React.useState<number>(0);
 
-  const { currentTrack, currentAlbum, removeItem, changeState } = useTrack();
+  const { audioRef, currentTrack, currentAlbum, removeItem, changeState, playPause } = useTrack();
 
   React.useEffect(() => {
-    if (album?.tracks) {
-      const currentIndex = album.tracks.findIndex((track) => track.id === currentTrack?.id);
+    if (currentAlbum?.tracks) {
+      const currentIndex = currentAlbum.tracks.findIndex((track) => track.id === currentTrack?.id);
 
       const prevIndex = currentIndex - 1;
       const nextIndex = currentIndex + 1;
 
-      setPrev(album.tracks[prevIndex]);
-      setNext(album.tracks[nextIndex]);
+      setPrev(currentAlbum.tracks[prevIndex]);
+      setNext(currentAlbum.tracks[nextIndex]);
 
       setTrackDuration(0);
       setCurrrentProgress(0);
     }
-  }, [album?.tracks, currentTrack?.id]);
+  }, [currentAlbum, currentTrack?.id]);
 
   /**
    * Handles the event when the current track ends.
@@ -57,7 +50,7 @@ const Player = ({ album, audioRef, handlePlayPause }: IProps): React.JSX.Element
    */
   const handleOnEnded = (): void => {
     if (next && currentAlbum) {
-      handlePlayPause(next, currentAlbum);
+      playPause(next, currentAlbum);
     } else {
       removeItem();
       setTrackDuration(0);
@@ -177,7 +170,7 @@ const Player = ({ album, audioRef, handlePlayPause }: IProps): React.JSX.Element
 
         <div className='player-container flex flex-gap flex-v-center flex-space-between'>
           <div className='player-buttons flex flex-gap flex-h-start flex-v-center flex-1'>
-            <Control prev={prev} next={next} handlePlayPause={handlePlayPause} />
+            <Control prev={prev} next={next} />
 
             <Duration
               duration={Utils.formatTime(trackDuration)}

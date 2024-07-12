@@ -24,15 +24,17 @@ export interface IAlbum {
   image: string;
   minutes: number;
   artist: IArtist;
-  tracks: ITrack[];
   explicit: boolean;
+  tracks?: ITrack[] | null;
 }
 
 export interface ITrackContext {
+  audioRef?: React.RefObject<HTMLAudioElement> | null;
   currentState?: string | null;
   currentTrack?: ITrack | null;
   currentAlbum?: IAlbum | null;
   addItem: (track: ITrack, album: IAlbum) => void;
+  playPause: (track: ITrack, album: IAlbum) => void;
   removeItem: () => void;
   changeState: (state: string) => void;
 }

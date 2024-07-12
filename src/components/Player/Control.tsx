@@ -10,11 +10,10 @@ import type { IAlbum, ITrack } from '../../types/types';
 interface IProps {
   prev?: ITrack | null;
   next?: ITrack | null;
-  handlePlayPause: (track: ITrack, album: IAlbum) => void;
 }
 
-const Control = ({ prev, next, handlePlayPause }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, currentAlbum } = useTrack();
+const Control = ({ prev, next }: IProps): React.JSX.Element => {
+  const { currentState, currentTrack, currentAlbum, playPause } = useTrack();
 
   return (
     <>
@@ -22,14 +21,14 @@ const Control = ({ prev, next, handlePlayPause }: IProps): React.JSX.Element => 
         type='button'
         title={`Previous song: ${prev?.name}`}
         className={prev ? 'active-opacity' : 'disabled active-opacity'}
-        onClick={() => handlePlayPause(prev as ITrack, currentAlbum as IAlbum)}
+        onClick={() => playPause(prev as ITrack, currentAlbum as IAlbum)}
       >
         <span className='material-symbols-outlined'>skip_previous</span>
       </button>
       <button
         type='button'
         className='big active-opacity'
-        onClick={() => handlePlayPause(currentTrack as ITrack, currentAlbum as IAlbum)}
+        onClick={() => playPause(currentTrack as ITrack, currentAlbum as IAlbum)}
       >
         <span className='material-symbols-outlined'>
           {currentState === 'playing' ? 'pause' : 'play_arrow'}
@@ -39,7 +38,7 @@ const Control = ({ prev, next, handlePlayPause }: IProps): React.JSX.Element => 
         type='button'
         title={`Next song: ${next?.name}`}
         className={next ? 'active-opacity' : 'disabled active-opacity'}
-        onClick={() => handlePlayPause(next as ITrack, currentAlbum as IAlbum)}
+        onClick={() => playPause(next as ITrack, currentAlbum as IAlbum)}
       >
         <span className='material-symbols-outlined'>skip_next</span>
       </button>

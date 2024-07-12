@@ -1,108 +1,218 @@
-{
-  "id": "owzp21",
-  "year": 1990,
-  "name": "Seasons In The Abyss",
-  "songs": 10,
-  "minutes": 42,
-  "explicit": true,
-  "image": "https://lh3.googleusercontent.com/FkiLeJISpkE_HiuIwW-pDvvcCF5BbG0js2fLr0wmjC9OXCo6JrQHYLHHFvdoKmXaxr5hBeYGVs0BoSQ=w544-h544-l90-rj",
-  "artist": {
-    "id": "undh23",
-    "name": "Slayer",
-    "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
-    "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
-    "monthlyListeners": "5M"
+[
+  {
+    "id": "kwms71",
+    "year": 1988,
+    "name": "South of Heaven",
+    "songs": 10,
+    "minutes": 37,
+    "explicit": true,
+    "image": "https://lh3.googleusercontent.com/4uh8l1MzHLECnrh5xnm4y8gfNtK357ib4b9h4F_OvLjSyfF1-jHAVH9fIZ2wj3HY_zzVaPFBmQaodnRe=w544-h544-l90-rj",
+    "artist": {
+      "id": "undh23",
+      "name": "Slayer",
+      "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+      "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+      "monthlyListeners": "5M"
+    },
+    "tracks": [
+      {
+        "id": "zslk93",
+        "no": 1,
+        "name": "South Of Heaven",
+        "duration": "4:59",
+        "playcount": "45M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/ff/dc/48ffdc0f-b9e0-838d-e1c9-61d80df48078/mzaf_5998217521787137583.plus.aac.p.m4a"
+      },
+      {
+        "id": "nwql84",
+        "no": 2,
+        "name": "Silent Scream",
+        "duration": "3:07",
+        "playcount": "4.5M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/42/91/d1/4291d110-7f4a-2f63-d40a-e06f9efeac18/mzaf_17428307813509516652.plus.aac.p.m4a"
+      },
+      {
+        "id": "usho39",
+        "no": 3,
+        "name": "Live Undead",
+        "duration": "3:50",
+        "playcount": "1.6M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e5/6e/80/e56e8013-5651-1a88-4c09-71923acf9bc2/mzaf_10044930017408070138.plus.aac.p.m4a"
+      },
+      {
+        "id": "npla84",
+        "no": 4,
+        "name": "Behind The Crooked Cross",
+        "duration": "3:15",
+        "playcount": "5.4M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/44/f7/51/44f751f6-f429-701e-e1e1-fa932256ad63/mzaf_1194861115870732317.plus.aac.p.m4a"
+      },
+      {
+        "id": "ubdl17",
+        "no": 5,
+        "name": "Mandatory Suicide",
+        "duration": "4:06",
+        "playcount": "10M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3b/cb/ba/3bcbba68-f70b-a455-4136-f87380b33074/mzaf_1285521803194708873.plus.aac.p.m4a"
+      },
+      {
+        "id": "iaxr23",
+        "no": 6,
+        "name": "Ghosts Of War",
+        "duration": "3:54",
+        "playcount": "2.4M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/46/13/2f/46132f2d-9a37-d1ef-e97b-31e55edff46b/mzaf_13054115171272717446.plus.aac.p.m4a"
+      },
+      {
+        "id": "eqmp73",
+        "no": 7,
+        "name": "Read Between The Lies",
+        "duration": "3:21",
+        "playcount": "1.5M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c2/14/f8/c214f8cc-253f-4ecc-da9c-8bbdeb50f460/mzaf_12578358605339685538.plus.aac.p.m4a"
+      },
+      {
+        "id": "wocy68",
+        "no": 8,
+        "name": "Cleanse The Soul",
+        "duration": "3:02",
+        "playcount": "766K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/39/c0/47/39c0472a-0835-ff8d-f210-0d373dee3258/mzaf_14759670286415967942.plus.aac.p.m4a"
+      },
+      {
+        "id": "gjau46",
+        "no": 9,
+        "name": "Dissident Aggressor",
+        "duration": "2:36",
+        "playcount": "1M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0b/ea/92/0bea92e9-9529-2001-355e-3198f9b00b0c/mzaf_9803998426732968499.plus.aac.p.m4a"
+      },
+      {
+        "id": "cpsp29",
+        "no": 10,
+        "name": "Spill The Blood",
+        "duration": "4:50",
+        "playcount": "3.3M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/31/45/fc/3145fcc0-6e6b-2c85-f3a8-9a0d0c82950b/mzaf_13130073866459232544.plus.aac.p.m4a"
+      }
+    ]
   },
-  "tracks": [
-    {
-      "id": "xkoe34",
-      "no": 1,
-      "name": "War Ensemble",
-      "duration": "4:52",
-      "playcount": "25M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9b/27/23/9b2723fe-2e03-5ec9-706d-bb40165d7ae2/mzaf_15040109340577206353.plus.aac.p.m4a"
+  {
+    "id": "owzp21",
+    "year": 1990,
+    "name": "Seasons In The Abyss",
+    "songs": 10,
+    "minutes": 42,
+    "explicit": true,
+    "image": "https://lh3.googleusercontent.com/FkiLeJISpkE_HiuIwW-pDvvcCF5BbG0js2fLr0wmjC9OXCo6JrQHYLHHFvdoKmXaxr5hBeYGVs0BoSQ=w544-h544-l90-rj",
+    "artist": {
+      "id": "undh23",
+      "name": "Slayer",
+      "image": "https://i.scdn.co/image/643c0c72a9e44c2b65f0b9af158f525d55a15988",
+      "description": "Slayer were one of the most distinctive, influential, and extreme thrash metal bands of the 1980s. Their graphic lyrics dealt with...",
+      "monthlyListeners": "5M"
     },
-    {
-      "id": "lwjs23",
-      "no": 2,
-      "name": "Blood Red",
-      "duration": "2:48",
-      "playcount": "1.5M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/12/e3/cf/12e3cf4b-da23-9852-b76e-1ea83b535949/mzaf_10539487321042676663.plus.aac.p.m4a"
-    },
-    {
-      "id": "xmek98",
-      "no": 3,
-      "name": "Spirit In Black",
-      "duration": "4:08",
-      "playcount": "3.4M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4e/73/18/4e731881-fef3-aa08-80a4-75d438664db7/mzaf_4925351515476582558.plus.aac.p.m4a"
-    },
-    {
-      "id": "pqao38",
-      "no": 4,
-      "name": "Expendable Youth",
-      "duration": "4:10",
-      "playcount": "3.7M",
-      "explicit": true,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/84/da/57/84da5722-9084-b804-4807-66d6e9c3685c/mzaf_4101290517822944918.plus.aac.p.m4a"
-    },
-    {
-      "id": "kpcg11",
-      "no": 5,
-      "name": "Dead Skin Mask",
-      "duration": "5:21",
-      "playcount": "13M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7b/55/aa/7b55aadf-2a53-6356-c623-8cb44d0f2be6/mzaf_17065757017485804509.plus.aac.p.m4a"
-    },
-    {
-      "id": "yesf93",
-      "no": 6,
-      "name": "Hallowed Point",
-      "duration": "3:24",
-      "playcount": "1.2M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fa/85/6a/fa856a9c-9bee-b9cc-40fc-46060be1f4e5/mzaf_13620413021837620366.plus.aac.p.m4a"
-    },
-    {
-      "id": "imol39",
-      "no": 7,
-      "name": "Skeletons Of Society",
-      "duration": "4:41",
-      "playcount": "19M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/0b/70/e80b7058-96f3-8816-b164-d3b7d09dd480/mzaf_4405769482119511788.plus.aac.p.m4a"
-    },
-    {
-      "id": "tukl73",
-      "no": 8,
-      "name": "Temptation",
-      "duration": "3:26",
-      "playcount": "910K",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/26/14/02/26140206-4800-acf1-5814-98b04449572d/mzaf_5261056768291014086.plus.aac.p.m4a"
-    },
-    {
-      "id": "eamf51",
-      "no": 9,
-      "name": "Born Of Fire",
-      "duration": "3:08",
-      "playcount": "891K",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5d/f1/94/5df19471-a280-924f-2bdb-580bd5cebb4b/mzaf_1942220932384605374.plus.aac.p.m4a"
-    },
-    {
-      "id": "ybrk59",
-      "no": 10,
-      "name": "Seasons In The Abyss",
-      "duration": "6:38",
-      "playcount": "78M",
-      "explicit": false,
-      "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
-    }
-  ]
-}
+    "tracks": [
+      {
+        "id": "xkoe34",
+        "no": 1,
+        "name": "War Ensemble",
+        "duration": "4:52",
+        "playcount": "25M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9b/27/23/9b2723fe-2e03-5ec9-706d-bb40165d7ae2/mzaf_15040109340577206353.plus.aac.p.m4a"
+      },
+      {
+        "id": "lwjs23",
+        "no": 2,
+        "name": "Blood Red",
+        "duration": "2:48",
+        "playcount": "1.5M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/12/e3/cf/12e3cf4b-da23-9852-b76e-1ea83b535949/mzaf_10539487321042676663.plus.aac.p.m4a"
+      },
+      {
+        "id": "xmek98",
+        "no": 3,
+        "name": "Spirit In Black",
+        "duration": "4:08",
+        "playcount": "3.4M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4e/73/18/4e731881-fef3-aa08-80a4-75d438664db7/mzaf_4925351515476582558.plus.aac.p.m4a"
+      },
+      {
+        "id": "pqao38",
+        "no": 4,
+        "name": "Expendable Youth",
+        "duration": "4:10",
+        "playcount": "3.7M",
+        "explicit": true,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/84/da/57/84da5722-9084-b804-4807-66d6e9c3685c/mzaf_4101290517822944918.plus.aac.p.m4a"
+      },
+      {
+        "id": "kpcg11",
+        "no": 5,
+        "name": "Dead Skin Mask",
+        "duration": "5:21",
+        "playcount": "13M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7b/55/aa/7b55aadf-2a53-6356-c623-8cb44d0f2be6/mzaf_17065757017485804509.plus.aac.p.m4a"
+      },
+      {
+        "id": "yesf93",
+        "no": 6,
+        "name": "Hallowed Point",
+        "duration": "3:24",
+        "playcount": "1.2M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fa/85/6a/fa856a9c-9bee-b9cc-40fc-46060be1f4e5/mzaf_13620413021837620366.plus.aac.p.m4a"
+      },
+      {
+        "id": "imol39",
+        "no": 7,
+        "name": "Skeletons Of Society",
+        "duration": "4:41",
+        "playcount": "19M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/0b/70/e80b7058-96f3-8816-b164-d3b7d09dd480/mzaf_4405769482119511788.plus.aac.p.m4a"
+      },
+      {
+        "id": "tukl73",
+        "no": 8,
+        "name": "Temptation",
+        "duration": "3:26",
+        "playcount": "910K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/26/14/02/26140206-4800-acf1-5814-98b04449572d/mzaf_5261056768291014086.plus.aac.p.m4a"
+      },
+      {
+        "id": "eamf51",
+        "no": 9,
+        "name": "Born Of Fire",
+        "duration": "3:08",
+        "playcount": "891K",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5d/f1/94/5df19471-a280-924f-2bdb-580bd5cebb4b/mzaf_1942220932384605374.plus.aac.p.m4a"
+      },
+      {
+        "id": "ybrk59",
+        "no": 10,
+        "name": "Seasons In The Abyss",
+        "duration": "6:38",
+        "playcount": "78M",
+        "explicit": false,
+        "mediaurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/a6/48/67a6480d-5a2a-7f24-18fb-37f8bf1fb89f/mzaf_13120438317988430138.plus.aac.p.m4a"
+      }
+    ]
+  }
+]
