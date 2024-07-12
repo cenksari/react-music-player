@@ -29,6 +29,7 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
   const [muted, setMuted] = React.useState<boolean>(false);
   const [prev, setPrev] = React.useState<ITrack | null>(null);
   const [next, setNext] = React.useState<ITrack | null>(null);
+  const [lastVolume, setLastVolume] = React.useState<number>(0.5);
   const [trackDuration, setTrackDuration] = React.useState<number>(0);
   const [currrentProgress, setCurrrentProgress] = React.useState<number>(0);
 
@@ -90,6 +91,8 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
 
       if (volumeValue === 0) {
         setMuted(true);
+
+        setLastVolume(0.1);
       }
     }
   };
@@ -105,12 +108,16 @@ const Player = ({ tracks, audioRef, handlePlayPause }: IProps): React.JSX.Elemen
       if (muted) {
         setMuted(false);
 
-        setVolume(0.3);
-        audioElement.volume = 0.3;
+        setVolume(lastVolume);
+
+        audioElement.volume = lastVolume;
       } else {
-        setMuted(true);
+        setLastVolume(audioElement.volume);
 
         setVolume(0);
+
+        setMuted(true);
+
         audioElement.volume = 0;
       }
     }
