@@ -21,7 +21,6 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs",
     ".eslintrc.cjs",
     ".prettierrc.cjs",
     "declaration.d.ts"
