@@ -21,9 +21,11 @@ const ArtistPage = (): React.JSX.Element => {
       <Cover artist={albumData[0].artist} />
 
       <div className='container flex flex-column flex-gap'>
-        <Link to='/' className='active-opacity underline'>
-          <h3>Songs</h3>
-        </Link>
+        <div className='flex flex-space-between flex-v-center'>
+          <Link to='/' className='active-opacity underline'>
+            <h3>Songs</h3>
+          </Link>
+        </div>
 
         <div className='flex flex-column'>
           <Song
@@ -43,30 +45,35 @@ const ArtistPage = (): React.JSX.Element => {
           />
           <Song
             album={albumData[2]}
-            track={albumData[2].tracks[8]}
-            playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[8].id}
+            track={albumData[2].tracks[6]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[6].id}
           />
           <Song
             album={albumData[0]}
-            track={albumData[0].tracks[6]}
-            playing={currentState === 'playing' && currentTrack?.id === albumData[0].tracks[6].id}
+            track={albumData[0].tracks[8]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[0].tracks[8].id}
           />
           <Song
             album={albumData[3]}
-            track={albumData[3].tracks[5]}
-            playing={currentState === 'playing' && currentTrack?.id === albumData[3].tracks[5].id}
+            track={albumData[3].tracks[0]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[3].tracks[0].id}
           />
           <Song
             album={albumData[2]}
             track={albumData[2].tracks[9]}
             playing={currentState === 'playing' && currentTrack?.id === albumData[2].tracks[9].id}
           />
+          <Song
+            album={albumData[3]}
+            track={albumData[3].tracks[3]}
+            playing={currentState === 'playing' && currentTrack?.id === albumData[3].tracks[3].id}
+          />
         </div>
       </div>
 
       <Albums title='Albums' albums={albumData} />
 
-      <Albums title='Appeared on' albums={albumData} />
+      <Albums title='Featured on' albums={albumData} />
     </div>
   );
 };

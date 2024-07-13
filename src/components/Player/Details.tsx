@@ -14,10 +14,13 @@ interface IProps {
 const Details = ({ track, album }: IProps): React.JSX.Element => (
   <div className='player-information flex flex-gap flex-grow flex-h-center flex-v-center'>
     <Link to='/' className='active-opacity'>
-      <img width='50' src={album?.image} alt={album?.name} draggable='false' />
+      <div className='mini-image' style={{ backgroundImage: `url(${album?.image})` }} />
     </Link>
     <div className='track-info flex flex-column'>
-      <strong>{track?.name}</strong>
+      <div className='flex flex-gap-small flex-v-center'>
+        <strong>{track?.name}</strong>
+        {track?.explicit && <span className='material-symbols-outlined'>explicit</span>}
+      </div>
       <span className='flex flex-gap-small'>
         <Link to={`/artist/${album?.artist.id}`} className='active-opacity'>
           {album?.artist.name}

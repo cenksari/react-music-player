@@ -18,9 +18,11 @@ interface IProps {
 const Albums = ({ title, albums }: IProps): React.JSX.Element => {
   return (
     <div className='container flex flex-column flex-gap'>
-      <Link to='/' className='active-opacity underline'>
-        <h3>{title}</h3>
-      </Link>
+      <div className='flex flex-space-between flex-v-center'>
+        <Link to='/' className='active-opacity underline'>
+          <h3>{title}</h3>
+        </Link>
+      </div>
 
       <Slider>
         {albums.map((item: IAlbum) => (
