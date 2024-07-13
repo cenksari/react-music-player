@@ -727,21 +727,21 @@ strong,
 
 .scrollable::-webkit-scrollbar {
   height: 1px;
-  background-color: transparent;
+  background-color: #111111;
 }
 
 .scrollable::-webkit-scrollbar-track {
   height: 1px;
-  background-color: transparent;
+  background-color: #111111;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
   height: 1px;
-  background-color: transparent;
+  background-color: #111111;
 }
 
 .scrollable::-webkit-scrollbar-thumb:window-inactive {
-  background: transparent;
+  background: #111111;
 }
 
 @media (max-width: 750px) {
