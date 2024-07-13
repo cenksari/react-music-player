@@ -21,12 +21,12 @@ const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
   return (
     <Link
       to={`/album/${album.id}`}
-      className='song flex flex-gap flex-v-center active-opacity'
       onClick={(e) => {
         e.preventDefault();
 
         playPause(track, album);
       }}
+      className='song flex flex-gap flex-v-center active-opacity'
     >
       <div
         className='image'
@@ -39,7 +39,6 @@ const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
           <strong>{track.name}</strong>
           {track.explicit && <span className='material-symbols-outlined'>explicit</span>}
         </div>
-
         <div className='flex flex-2 flex-gap-small flex-v-center'>
           <div className='artist-name flex flex-1'>
             <span>{album.artist.name}</span>

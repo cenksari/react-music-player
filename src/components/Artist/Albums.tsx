@@ -15,22 +15,19 @@ interface IProps {
   albums: IAlbum[];
 }
 
-const Albums = ({ title, albums }: IProps): React.JSX.Element => {
-  return (
-    <div className='container flex flex-column flex-gap'>
-      <div className='flex flex-space-between flex-v-center'>
-        <Link to='/' className='active-opacity underline'>
-          <h3>{title}</h3>
-        </Link>
-      </div>
-
-      <Slider>
-        {albums.map((item: IAlbum) => (
-          <Card key={item.id} album={item} />
-        ))}
-      </Slider>
+const Albums = ({ title, albums }: IProps): React.JSX.Element => (
+  <div className='container flex flex-column flex-gap'>
+    <div className='flex flex-space-between flex-v-center'>
+      <Link to='/' className='active-opacity underline'>
+        <h3>{title}</h3>
+      </Link>
     </div>
-  );
-};
+    <Slider>
+      {albums.map((item: IAlbum) => (
+        <Card key={item.id} album={item} />
+      ))}
+    </Slider>
+  </div>
+);
 
 export default Albums;

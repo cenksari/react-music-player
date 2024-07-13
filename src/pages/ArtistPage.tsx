@@ -19,14 +19,12 @@ const ArtistPage = (): React.JSX.Element => {
   return (
     <div className='artist flex flex-column flex-gap no-select'>
       <Cover artist={albumData[0].artist} />
-
       <div className='container flex flex-column flex-gap'>
         <div className='flex flex-space-between flex-v-center'>
           <Link to='/' className='active-opacity underline'>
             <h3>Songs</h3>
           </Link>
         </div>
-
         <div className='flex flex-column'>
           <Song
             album={albumData[0]}
@@ -70,9 +68,7 @@ const ArtistPage = (): React.JSX.Element => {
           />
         </div>
       </div>
-
       <Albums title='Albums' albums={albumData} />
-
       <Albums title='Featured on' albums={albumData} />
     </div>
   );

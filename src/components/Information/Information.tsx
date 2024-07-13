@@ -17,11 +17,8 @@ interface IProps {
 const Information = ({ album }: IProps): React.JSX.Element => (
   <div className='information flex flex-column flex-gap no-select'>
     <Image album={album} />
-
     <Details album={album} />
-
     <Buttons album={album} />
-
     <Playlist album={album} />
   </div>
 );

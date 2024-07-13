@@ -161,25 +161,20 @@ const Player = (): React.JSX.Element | null => {
           <source type='audio/mpeg' src={currentTrack.mediaurl} />
           Your browser does not support the audio tag.
         </audio>
-
         <Progress
           duration={trackDuration}
           currentProgress={currrentProgress}
           onProgressChange={onProgressChange}
         />
-
         <div className='player-container flex flex-gap flex-v-center flex-space-between'>
           <div className='player-buttons flex flex-gap flex-h-start flex-v-center flex-1'>
             <Control prev={prev} next={next} />
-
             <Duration
               duration={Utils.formatTime(trackDuration)}
               current={Utils.formatTime(currrentProgress)}
             />
           </div>
-
           <Details track={currentTrack} album={currentAlbum} />
-
           <div className='player-controls flex flex-gap-medium flex-h-end flex-v-center flex-1'>
             <Volume
               muted={muted}
@@ -187,7 +182,6 @@ const Player = (): React.JSX.Element | null => {
               onMutePressed={handleMuteChange}
               onVolumeChange={handleVolumeChange}
             />
-
             <Expand />
           </div>
         </div>

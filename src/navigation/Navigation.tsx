@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 
+// pages
 import AlbumPage from '../pages/AlbumPage';
 import ArtistPage from '../pages/ArtistPage';
 

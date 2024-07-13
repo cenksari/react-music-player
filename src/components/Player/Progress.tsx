@@ -6,6 +6,7 @@ interface IProps extends React.ComponentPropsWithoutRef<'input'> {
   currentProgress: number;
   onProgressChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
 const Progress = ({ duration, currentProgress, onProgressChange }: IProps): React.JSX.Element => (
   <div className='progress'>
     <input
@@ -14,8 +15,8 @@ const Progress = ({ duration, currentProgress, onProgressChange }: IProps): Reac
       max={duration}
       name='progress'
       value={currentProgress}
-      className='progress-bar red'
       onChange={onProgressChange}
+      className='progress-bar red'
     />
   </div>
 );

@@ -37,7 +37,6 @@ const TrackLine = ({
         )}
       </button>
     )}
-
     {!playing && !selected && (
       <button type='button' onClick={handlePlayPause}>
         <span className='number flex flex-h-center flex-v-center track-number'>{track.no}</span>
@@ -46,7 +45,6 @@ const TrackLine = ({
         </span>
       </button>
     )}
-
     <div className='flex flex-column flex-grow'>
       <button type='button' className='name-button' onClick={handlePlayPause}>
         {track.name}
