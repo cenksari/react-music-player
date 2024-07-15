@@ -10,11 +10,13 @@ If you like this resource, please follow me on GitHub. Thank you!
 
 ## Screenshots
 
+![Album](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/album.png)
+
 ![Artist](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/artist.png)
 
-![Player](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/player.png)
+![Album Mobile](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/album-mobile.png)
 
-![Mobile](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/mobile.png)
+![Artist Mobile](https://raw.githubusercontent.com/cenksari/react-music-player/master/screenshots/artist-mobile.png)
 
 ## Installation
 
