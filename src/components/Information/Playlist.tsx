@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const Playlist = ({ album }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, playPause } = useTrack();
+  const { currentState, currentTrack, handlePlayPause } = useTrack();
 
   return (
     <div className='playlist'>
@@ -24,7 +24,7 @@ const Playlist = ({ album }: IProps): React.JSX.Element => {
           track={item}
           key={item.id}
           selected={currentTrack?.id === item.id}
-          handlePlayPause={() => playPause(item, album)}
+          handlePlayPause={() => handlePlayPause(item, album)}
           playing={currentTrack?.id === item.id && currentState === 'playing'}
         />
       ))}

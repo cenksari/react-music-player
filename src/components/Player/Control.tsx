@@ -4,7 +4,8 @@ import React from 'react';
 import useTrack from '../../hooks/useTrack';
 
 const Control = (): React.JSX.Element | null => {
-  const { prevTrack, nextTrack, currentState, currentTrack, currentAlbum, playPause } = useTrack();
+  const { prevTrack, nextTrack, currentState, currentTrack, currentAlbum, handlePlayPause } =
+    useTrack();
 
   if (currentTrack && currentAlbum) {
     return (
@@ -13,14 +14,14 @@ const Control = (): React.JSX.Element | null => {
           type='button'
           title={`Previous song: ${prevTrack?.name}`}
           className={prevTrack ? 'active-opacity' : 'disabled active-opacity'}
-          onClick={() => prevTrack && playPause(prevTrack, currentAlbum)}
+          onClick={() => prevTrack && handlePlayPause(prevTrack, currentAlbum)}
         >
           <span className='material-symbols-outlined'>skip_previous</span>
         </button>
         <button
           type='button'
           className='big active-opacity'
-          onClick={() => playPause(currentTrack, currentAlbum)}
+          onClick={() => handlePlayPause(currentTrack, currentAlbum)}
         >
           <span className='material-symbols-outlined'>
             {currentState === 'playing' ? 'pause' : 'play_arrow'}
@@ -30,7 +31,7 @@ const Control = (): React.JSX.Element | null => {
           type='button'
           title={`Next song: ${nextTrack?.name}`}
           className={nextTrack ? 'active-opacity' : 'disabled active-opacity'}
-          onClick={() => nextTrack && playPause(nextTrack, currentAlbum)}
+          onClick={() => nextTrack && handlePlayPause(nextTrack, currentAlbum)}
         >
           <span className='material-symbols-outlined'>skip_next</span>
         </button>

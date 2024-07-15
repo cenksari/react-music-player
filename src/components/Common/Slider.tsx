@@ -57,7 +57,7 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
    *
    * @returns {void}
    */
-  const scroll = React.useCallback(() => {
+  const scroll = React.useCallback((): void => {
     buttons();
   }, []);
 
@@ -76,7 +76,7 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
    * @param {MouseEvent} e - The mouse event object.
    * @returns {void}
    */
-  const mouseDown = React.useCallback((e: MouseEvent) => {
+  const mouseDown = React.useCallback((e: MouseEvent): void => {
     e.preventDefault();
 
     const element: HTMLDivElement = navReference.current;
@@ -98,7 +98,7 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
    * @param {MouseEvent} e - The mouse event object.
    * @returns {void}
    */
-  const mouseMove = React.useCallback((e: MouseEvent) => {
+  const mouseMove = React.useCallback((e: MouseEvent): void => {
     if (!isDown.current) return;
 
     e.preventDefault();

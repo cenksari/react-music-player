@@ -40,10 +40,9 @@ export interface ITrackContext {
   trackDuration: number;
   currentProgress: number;
   addItem: (track: ITrack, album: IAlbum) => void;
-  playPause: (track: ITrack, album: IAlbum) => void;
-  removeItem: () => void;
   changeState: (state: string) => void;
-  onProgressChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePlayPause: (track: ITrack, album: IAlbum) => void;
   handleMuteChange: () => void;
   handleVolumeChange: (volumeValue: number) => void;
+  handleProgressChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

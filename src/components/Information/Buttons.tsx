@@ -12,19 +12,19 @@ interface IProps {
 }
 
 const Buttons = ({ album }: IProps): React.JSX.Element => {
-  const { currentState, currentTrack, currentAlbum, playPause } = useTrack();
+  const { currentState, currentTrack, currentAlbum, handlePlayPause } = useTrack();
 
   /**
    * Handles the play/pause functionality for the album.
-   * If the current album is not the same as the provided album, it starts playing the first track of the provided album.
+   * If the current album is not the same as the provided album, it plays the first track of the provided album.
    * If the current album is the same as the provided album, it toggles play/pause for the current track or the first track of the album.
    */
-  const handlePlayPause = () => {
+  const onPlayPause = (): void => {
     if (album.tracks) {
       if (currentAlbum?.id !== album.id) {
-        playPause(album.tracks[0], album);
+        handlePlayPause(album.tracks[0], album);
       } else {
-        playPause(currentTrack || album.tracks[0], currentAlbum || album);
+        handlePlayPause(currentTrack || album.tracks[0], currentAlbum || album);
       }
     }
   };
@@ -47,7 +47,7 @@ const Buttons = ({ album }: IProps): React.JSX.Element => {
       </button>
       <button
         type='button'
-        onClick={() => handlePlayPause()}
+        onClick={() => onPlayPause()}
         disabled={!album.tracks || album.tracks.length === 0}
         className='play-button flex flex-h-center flex-v-center active-opacity'
       >

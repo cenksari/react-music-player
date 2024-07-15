@@ -20,10 +20,25 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
   const [trackDuration, setTrackDuration] = React.useState<number>(0);
   const [prevTrack, setPrevTrack] = React.useState<ITrack | null>(null);
   const [nextTrack, setNextTrack] = React.useState<ITrack | null>(null);
-  const [currentProgress, setCurrrentProgress] = React.useState<number>(0);
+  const [currentProgress, setCurrentProgress] = React.useState<number>(0);
   const [currentState, setCurrentState] = React.useState<string | null>(null);
   const [currentTrack, setCurrentTrack] = React.useState<ITrack | null>(null);
   const [currentAlbum, setCurrentAlbum] = React.useState<IAlbum | null>(null);
+
+  React.useEffect(() => {
+    if (currentAlbum?.tracks) {
+      const currentIndex = currentAlbum.tracks.findIndex((track) => track.id === currentTrack?.id);
+
+      const prevIndex = currentIndex - 1;
+      const nextIndex = currentIndex + 1;
+
+      setPrevTrack(currentAlbum.tracks[prevIndex]);
+      setNextTrack(currentAlbum.tracks[nextIndex]);
+
+      setTrackDuration(0);
+      setCurrentProgress(0);
+    }
+  }, [currentAlbum, currentTrack?.id]);
 
   /**
    * Adds a track and album to the current state and sets the state to 'playing'.
@@ -35,17 +50,6 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
   const addItem = (track: ITrack, album: IAlbum): void => {
     setCurrentTrack(track);
     setCurrentAlbum(album);
-  };
-
-  /**
-   * Removes the current track and album from the state and sets the state to null.
-   *
-   * @returns {void}
-   */
-  const removeItem = (): void => {
-    setCurrentTrack(null);
-    setCurrentAlbum(null);
-    setCurrentState(null);
   };
 
   /**
@@ -75,21 +79,6 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
   };
 
   React.useEffect(() => {
-    if (currentAlbum?.tracks) {
-      const currentIndex = currentAlbum.tracks.findIndex((track) => track.id === currentTrack?.id);
-
-      const prevIndex = currentIndex - 1;
-      const nextIndex = currentIndex + 1;
-
-      setPrevTrack(currentAlbum.tracks[prevIndex]);
-      setNextTrack(currentAlbum.tracks[nextIndex]);
-
-      setTrackDuration(0);
-      setCurrrentProgress(0);
-    }
-  }, [currentAlbum, currentTrack?.id]);
-
-  React.useEffect(() => {
     const audioElement = audioRef?.current;
 
     audioElement?.addEventListener('loadeddata', handlePlay);
@@ -106,7 +95,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
    * @param {IAlbum} album - The album containing the track.
    * @returns {void}
    */
-  const playPause = React.useCallback(
+  const handlePlayPause = React.useCallback(
     (track: ITrack, album: IAlbum): void => {
       const audioElement = audioRef?.current;
 
@@ -130,11 +119,9 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
    */
   const handleOnEnded = (): void => {
     if (nextTrack && currentAlbum) {
-      playPause(nextTrack, currentAlbum);
+      handlePlayPause(nextTrack, currentAlbum);
     } else {
-      removeItem();
-      setTrackDuration(0);
-      setCurrrentProgress(0);
+      setCurrentProgress(0);
     }
   };
 
@@ -213,11 +200,11 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
    *
    * @param {React.ChangeEvent<HTMLInputElement>} e - The change event triggered by the progress input.
    */
-  const onProgressChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (audioRef?.current) {
       const audioElement = audioRef.current;
 
-      setCurrrentProgress(e.currentTarget.valueAsNumber);
+      setCurrentProgress(e.currentTarget.valueAsNumber);
 
       audioElement.currentTime = e.currentTarget.valueAsNumber;
     }
@@ -236,24 +223,23 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
       trackDuration,
       currentProgress,
       addItem,
-      playPause,
-      removeItem,
       changeState,
-      onProgressChange,
+      handlePlayPause,
       handleMuteChange,
       handleVolumeChange,
+      handleProgressChange,
     }),
     [
       muted,
       volume,
-      prevTrack,
       nextTrack,
+      prevTrack,
       currentState,
       currentTrack,
       currentAlbum,
       trackDuration,
       currentProgress,
-      playPause,
+      handlePlayPause,
       handleMuteChange,
     ]
   );
@@ -269,7 +255,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
         onPlaying={() => changeState('playing')}
         onLoadedMetadata={handleOnLoadedMetaData}
         onDurationChange={(e) => setTrackDuration(e.currentTarget.duration)}
-        onTimeUpdate={(e) => setCurrrentProgress(e.currentTarget.currentTime)}
+        onTimeUpdate={(e) => setCurrentProgress(e.currentTarget.currentTime)}
       >
         <track kind='captions' />
         <source type='audio/mpeg' src={currentTrack?.mediaurl} />

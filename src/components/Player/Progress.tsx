@@ -4,18 +4,19 @@ import React from 'react';
 import useTrack from '../../hooks/useTrack';
 
 const Progress = (): React.JSX.Element => {
-  const { trackDuration, currentProgress, onProgressChange } = useTrack();
+  const { trackDuration, currentProgress, handleProgressChange } = useTrack();
 
   return (
     <div className='progress'>
       <input
         min={0}
         type='range'
+        step={0.01}
         name='progress'
         max={trackDuration}
         value={currentProgress}
-        onChange={onProgressChange}
         className='progress-bar red'
+        onChange={handleProgressChange}
       />
     </div>
   );

@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
-  const { playPause } = useTrack();
+  const { handlePlayPause } = useTrack();
 
   return (
     <Link
@@ -24,7 +24,7 @@ const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
       onClick={(e) => {
         e.preventDefault();
 
-        playPause(track, album);
+        handlePlayPause(track, album);
       }}
       className='song flex flex-gap flex-v-center active-opacity'
     >

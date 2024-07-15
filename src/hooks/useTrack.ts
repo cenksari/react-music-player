@@ -19,12 +19,11 @@ const useTrack = () => {
     trackDuration,
     currentProgress,
     addItem,
-    removeItem,
-    playPause,
     changeState,
-    onProgressChange,
+    handlePlayPause,
     handleMuteChange,
     handleVolumeChange,
+    handleProgressChange,
   } = React.useContext(TrackContext) as ITrackContext;
 
   return {
@@ -39,12 +38,11 @@ const useTrack = () => {
     trackDuration,
     currentProgress,
     addItem,
-    playPause,
-    removeItem,
     changeState,
-    onProgressChange,
+    handlePlayPause,
     handleMuteChange,
     handleVolumeChange,
+    handleProgressChange,
   };
 };
 

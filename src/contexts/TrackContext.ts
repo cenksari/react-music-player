@@ -15,12 +15,11 @@ const TrackContext = React.createContext<ITrackContext>({
   trackDuration: 0,
   currentProgress: 0,
   addItem: () => {},
-  playPause: () => {},
-  removeItem: () => {},
   changeState: () => {},
-  onProgressChange: () => {},
+  handlePlayPause: () => {},
   handleMuteChange: () => {},
   handleVolumeChange: () => {},
+  handleProgressChange: () => {},
 });
 
 export default TrackContext;
