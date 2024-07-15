@@ -753,6 +753,30 @@ strong,
 }
 
 @media (max-width: 750px) {
+  .player .player-container {
+    padding: 0 10px;
+  }
+
+  .player .player-information {
+    justify-content: flex-start;
+  }
+
+  .player .player-buttons {
+    display: none;
+  }
+
+  .player .expand-button {
+    display: none;
+  }
+
+  .player .play-button {
+    display: flex;
+  }
+
+  .player .volume-control {
+    display: none;
+  }
+
   .song .image {
     width: 45px;
     height: 45px;
@@ -775,34 +799,6 @@ strong,
   .information .image img {
     width: 320px;
     height: 320px;
-  }
-
-  .player .flex-gap {
-    gap: 5px;
-  }
-
-  .player .player-container {
-    padding: 0 10px;
-  }
-
-  .player .player-buttons {
-    display: none;
-  }
-
-  .player .player-information {
-    justify-content: flex-start;
-  }
-
-  .player .expand-button {
-    display: none;
-  }
-
-  .player .play-button {
-    display: flex;
-  }
-
-  .player .volume-control {
-    display: none;
   }
 
   .song {
