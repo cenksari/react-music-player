@@ -29,7 +29,13 @@ export interface IAlbum {
 }
 
 export interface ITrackContext {
+  muted: boolean;
+  volume: number;
   audioRef?: React.RefObject<HTMLAudioElement> | null;
+  prevTrack: ITrack | null;
+  nextTrack: ITrack | null;
+  trackDuration: number;
+  currentProgress: number;
   currentState?: string | null;
   currentTrack?: ITrack | null;
   currentAlbum?: IAlbum | null;
@@ -37,4 +43,7 @@ export interface ITrackContext {
   playPause: (track: ITrack, album: IAlbum) => void;
   removeItem: () => void;
   changeState: (state: string) => void;
+  onProgressChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleMuteChange: () => void;
+  handleVolumeChange: (volumeValue: number) => void;
 }

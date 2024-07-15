@@ -8,7 +8,13 @@ import type { ITrackContext } from '../types/types';
 
 const useTrack = () => {
   const {
+    muted,
+    volume,
     audioRef,
+    prevTrack,
+    nextTrack,
+    trackDuration,
+    currentProgress,
     currentState,
     currentTrack,
     currentAlbum,
@@ -16,10 +22,19 @@ const useTrack = () => {
     removeItem,
     playPause,
     changeState,
+    onProgressChange,
+    handleMuteChange,
+    handleVolumeChange,
   } = React.useContext(TrackContext) as ITrackContext;
 
   return {
+    muted,
+    volume,
     audioRef,
+    prevTrack,
+    nextTrack,
+    trackDuration,
+    currentProgress,
     currentState,
     currentTrack,
     currentAlbum,
@@ -27,6 +42,9 @@ const useTrack = () => {
     playPause,
     removeItem,
     changeState,
+    onProgressChange,
+    handleMuteChange,
+    handleVolumeChange,
   };
 };
 

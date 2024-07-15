@@ -1,17 +1,21 @@
 import React from 'react';
 
-// interfaces
-interface IProps {
-  current?: string;
-  duration?: string;
-}
+// hooks
+import useTrack from '../../hooks/useTrack';
 
-const Duration = ({ current, duration }: IProps): React.JSX.Element => (
-  <div className='player-duration flex flex-gap-medium flex-v-center'>
-    <span>{current}</span>
-    <em>/</em>
-    <span>{duration}</span>
-  </div>
-);
+// utilities
+import Utils from '../../utils/Utils';
+
+const Duration = (): React.JSX.Element => {
+  const { trackDuration, currentProgress } = useTrack();
+
+  return (
+    <div className='player-duration flex flex-gap-medium flex-v-center'>
+      <span>{Utils.formatTime(currentProgress)}</span>
+      <em>/</em>
+      <span>{Utils.formatTime(trackDuration)}</span>
+    </div>
+  );
+};
 
 export default Duration;
