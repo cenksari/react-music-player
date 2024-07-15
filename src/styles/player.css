@@ -537,6 +537,14 @@ strong,
   font-size: 2.5em;
 }
 
+.player .play-button {
+  display: none;
+}
+
+.player .play-button span {
+  font-size: 2em;
+}
+
 .player .player-buttons button.disabled {
   opacity: 0.4;
   pointer-events: none;
@@ -773,12 +781,28 @@ strong,
     gap: 5px;
   }
 
-  .player-information {
+  .player .player-container {
+    padding: 0 10px;
+  }
+
+  .player .player-buttons {
     display: none;
   }
 
-  .player-controls input[type='range'] {
-    width: 50%;
+  .player .player-information {
+    justify-content: flex-start;
+  }
+
+  .player .expand-button {
+    display: none;
+  }
+
+  .player .play-button {
+    display: flex;
+  }
+
+  .player .volume-control {
+    display: none;
   }
 
   .song {
@@ -787,10 +811,6 @@ strong,
 }
 
 @media (max-width: 450px) {
-  .player .volume-control {
-    display: none;
-  }
-
   .song .play-count {
     display: none;
   }

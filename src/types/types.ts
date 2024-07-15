@@ -34,11 +34,11 @@ export interface ITrackContext {
   audioRef?: React.RefObject<HTMLAudioElement> | null;
   prevTrack: ITrack | null;
   nextTrack: ITrack | null;
-  trackDuration: number;
-  currentProgress: number;
   currentState?: string | null;
   currentTrack?: ITrack | null;
   currentAlbum?: IAlbum | null;
+  trackDuration: number;
+  currentProgress: number;
   addItem: (track: ITrack, album: IAlbum) => void;
   playPause: (track: ITrack, album: IAlbum) => void;
   removeItem: () => void;

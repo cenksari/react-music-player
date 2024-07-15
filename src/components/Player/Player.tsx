@@ -10,6 +10,7 @@ import Control from './Control';
 import Details from './Details';
 import Progress from './Progress';
 import Duration from './Duration';
+import ControlMini from './ControlMini';
 
 const Player = (): React.JSX.Element | null => {
   const { currentTrack, currentAlbum } = useTrack();
@@ -27,6 +28,7 @@ const Player = (): React.JSX.Element | null => {
           <div className='player-controls flex flex-gap-medium flex-h-end flex-v-center flex-1'>
             <Volume />
             <Expand />
+            <ControlMini />
           </div>
         </div>
       </div>
