@@ -12,13 +12,11 @@ import Navigation from './navigation/Navigation';
 // providers
 import TrackProvider from './providers/TrackProvider';
 
-const App = (): React.JSX.Element => {
-  return (
-    <TrackProvider>
-      <Player />
-      <Navigation />
-    </TrackProvider>
-  );
-};
+const App = (): React.JSX.Element => (
+  <TrackProvider>
+    <Player />
+    <Navigation />
+  </TrackProvider>
+);
 
 export default App;

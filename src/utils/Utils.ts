@@ -16,10 +16,12 @@ const formatTime = (duration: number): string => {
 /**
  * Shuffles an array in place.
  *
- * @param {any[]} array - The array to be shuffled.
- * @returns {any[]} The shuffled array.
+ * @template T
+ * @param {T[]} array - The array to shuffle.
+ * @returns {T[]} The shuffled array.
  */
-const shuffleArray = (array: any[]): any[] => array?.sort(() => 0.5 - Math.random());
+
+const shuffleArray = <T>(array: T[]): T[] => array?.sort(() => 0.5 - Math.random());
 
 const Utils = {
   formatTime,

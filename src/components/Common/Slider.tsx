@@ -15,12 +15,17 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
   const [leftArrowDisable, setLeftArrowDisable] = React.useState<boolean>(true);
   const [rightArrowDisable, setRightArrowDisable] = React.useState<boolean>(false);
 
+  /**
+   * Handles the visibility of the left and right arrows based on the scroll position.
+   *
+   * @returns {void}
+   */
   const buttons = (): void => {
     const { offsetWidth, scrollWidth, scrollLeft } = navReference.current;
 
-    const hideLeftScroll: boolean = scrollLeft <= 0;
+    const hideLeftScroll = scrollLeft <= 0;
 
-    const hideRightScroll: boolean = scrollWidth - Math.round(scrollLeft) <= offsetWidth + 1;
+    const hideRightScroll = scrollWidth - Math.round(scrollLeft) <= offsetWidth + 1;
 
     if (hideLeftScroll) {
       setLeftArrowDisable(true);
@@ -35,65 +40,109 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
     }
   };
 
+  /**
+   * Handles click within the navigation reference element.
+   *
+   * @param {MouseEvent} e - The mouse event object.
+   * @returns {void}
+   */
   const click = (e: MouseEvent): void => {
     if (preventClick.current) {
       e.preventDefault();
     }
   };
 
+  /**
+   * Handles scrolling within the navigation reference element.
+   *
+   * @returns {void}
+   */
   const scroll = React.useCallback(() => {
     buttons();
   }, []);
 
+  /**
+   * Handles mouse up within the navigation reference element.
+   *
+   * @returns {void}
+   */
   const mouseUp = (): void => {
     isDown.current = false;
   };
 
+  /**
+   * Handles mouse down within the navigation reference element.
+   *
+   * @param {MouseEvent} e - The mouse event object.
+   * @returns {void}
+   */
   const mouseDown = React.useCallback((e: MouseEvent) => {
     e.preventDefault();
 
+    const element: HTMLDivElement = navReference.current;
+
     isDown.current = true;
 
-    startX.current = e.pageX - navReference.current.offsetLeft;
+    startX.current = e.pageX - element.offsetLeft;
 
-    scrollLeftX.current = navReference.current.scrollLeft;
+    scrollLeftX.current = element.scrollLeft;
 
     preventClick.current = false;
 
     buttons();
   }, []);
 
+  /**
+   * Handles mouse moving within the navigation reference element.
+   *
+   * @param {MouseEvent} e - The mouse event object.
+   * @returns {void}
+   */
   const mouseMove = React.useCallback((e: MouseEvent) => {
     if (!isDown.current) return;
 
     e.preventDefault();
 
-    const x: number = e.pageX - navReference.current.offsetLeft;
+    const element: HTMLDivElement = navReference.current;
 
-    const walk: number = x - startX.current;
+    const x = e.pageX - element.offsetLeft;
 
-    navReference.current.scrollLeft = scrollLeftX.current - walk;
+    const walk = x - startX.current;
+
+    element.scrollLeft = scrollLeftX.current - walk;
 
     preventClick.current = true;
 
     buttons();
   }, []);
 
+  /**
+   * Handles mouse leaving the navigation reference element.
+   *
+   * @returns {void}
+   */
   const mouseLeave = (): void => {
     isDown.current = false;
 
     preventClick.current = false;
   };
 
+  /**
+   * Handles horizontal scrolling of the navigation reference element.
+   *
+   * @param {number} speed - The speed of the scrolling in milliseconds.
+   * @param {number} step - The step size for each scroll interval.
+   * @returns {void}
+   */
   const handleHorizantalScroll = (speed: number, step: number): void => {
-    let scrollAmount: number = 0;
+    let scrollAmount = 0;
 
     const slideTimer = setInterval(() => {
       navReference.current.scrollLeft += step;
 
       scrollAmount += Math.abs(step);
 
-      if (scrollAmount >= 320) {
+      if (scrollAmount >= 180) {
         clearInterval(slideTimer);
       }
 
@@ -104,24 +153,26 @@ const Slider = ({ children }: IProps): React.JSX.Element => {
   React.useEffect(() => {
     buttons();
 
-    const elementRef: HTMLDivElement = navReference.current;
+    const element: HTMLDivElement = navReference.current;
 
     window.addEventListener('resize', scroll);
-    elementRef.addEventListener('click', click);
-    elementRef.addEventListener('scroll', scroll);
-    elementRef.addEventListener('mouseup', mouseUp);
-    elementRef.addEventListener('mousedown', mouseDown);
-    elementRef.addEventListener('mousemove', mouseMove);
-    elementRef.addEventListener('mouseleave', mouseLeave);
+
+    element.addEventListener('click', click);
+    element.addEventListener('scroll', scroll);
+    element.addEventListener('mouseup', mouseUp);
+    element.addEventListener('mousedown', mouseDown);
+    element.addEventListener('mousemove', mouseMove);
+    element.addEventListener('mouseleave', mouseLeave);
 
     return () => {
       window.removeEventListener('resize', scroll);
-      elementRef.removeEventListener('click', click);
-      elementRef.removeEventListener('scroll', scroll);
-      elementRef.removeEventListener('mouseup', mouseUp);
-      elementRef.removeEventListener('mousedown', mouseDown);
-      elementRef.removeEventListener('mousemove', mouseMove);
-      elementRef.removeEventListener('mouseleave', mouseLeave);
+
+      element.removeEventListener('click', click);
+      element.removeEventListener('scroll', scroll);
+      element.removeEventListener('mouseup', mouseUp);
+      element.removeEventListener('mousedown', mouseDown);
+      element.removeEventListener('mousemove', mouseMove);
+      element.removeEventListener('mouseleave', mouseLeave);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
