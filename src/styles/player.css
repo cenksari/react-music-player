@@ -415,8 +415,9 @@ strong,
 
 .information .image .back .back-info a,
 .information .image .back .back-info button {
+  width: 80px;
+  padding: 6px 0;
   font-size: 0.6em;
-  padding: 6px 15px;
   border: 1px solid #333333;
 }
 
@@ -635,7 +636,9 @@ strong,
 }
 
 .artist-cover button {
-  padding: 7px 20px;
+  width: 100px;
+  padding: 7px 0;
+  font-size: 0.9em;
   border: 1px solid #333333;
 }
 
@@ -809,5 +812,18 @@ strong,
 @media (max-width: 450px) {
   .song .play-count {
     display: none;
+  }
+
+  .artist-cover h1 {
+    font-size: 1.5em;
+  }
+
+  .artist-cover p,
+  .artist-cover span {
+    font-size: 0.9em;
+  }
+
+  .artist-cover button {
+    font-size: 0.85em;
   }
 }
