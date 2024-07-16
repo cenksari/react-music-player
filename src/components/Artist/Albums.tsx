@@ -11,14 +11,15 @@ import type { IAlbum } from '../../types/types';
 
 // interfaces
 interface IProps {
+  url: string;
   title: string;
   albums: IAlbum[];
 }
 
-const Albums = ({ title, albums }: IProps): React.JSX.Element => (
+const Albums = ({ url, title, albums }: IProps): React.JSX.Element => (
   <div className='container flex flex-column flex-gap'>
     <div className='flex flex-space-between flex-v-center'>
-      <Link to='/' className='active-opacity underline'>
+      <Link to={url} className='active-opacity underline'>
         <h3>{title}</h3>
       </Link>
     </div>

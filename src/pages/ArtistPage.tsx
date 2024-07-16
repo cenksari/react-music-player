@@ -68,8 +68,8 @@ const ArtistPage = (): React.JSX.Element => {
           />
         </div>
       </div>
-      <Albums title='Albums' albums={albumData} />
-      <Albums title='Featured on' albums={albumData} />
+      <Albums url={`/albums/${albumData[0].artist.id}`} title='Albums' albums={albumData} />
+      <Albums url={`/albums/${albumData[0].artist.id}`} title='Featured on' albums={albumData} />
     </div>
   );
 };

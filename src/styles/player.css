@@ -192,6 +192,12 @@ input[type='range' i]::-webkit-slider-thumb {
     'opsz' 24;
 }
 
+.grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .flex {
   display: flex;
 }
@@ -339,6 +345,14 @@ strong,
   width: 100%;
   position: absolute;
   padding: 0 0 110px 0;
+  transform: translateX(-50%);
+}
+
+.albums {
+  left: 50%;
+  width: 100%;
+  position: absolute;
+  padding: 15px 0 110px 0;
   transform: translateX(-50%);
 }
 
@@ -755,6 +769,18 @@ strong,
   background: #111111;
 }
 
+.grid .card {
+  width: 100%;
+}
+
+.grid .card .card-image {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
 @media (max-width: 750px) {
   .player .player-container {
     padding: 0 10px;
@@ -806,6 +832,10 @@ strong,
 
   .song {
     font-size: 1em;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
