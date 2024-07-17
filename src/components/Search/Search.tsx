@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = (): React.JSX.Element => {
   return (
-    <div className='search flex flex-h-center'>
+    <nav className='search flex flex-h-center'>
       <div className='search-container'>
         <label
           htmlFor='search'
@@ -19,7 +19,7 @@ const Search = (): React.JSX.Element => {
           />
         </label>
       </div>
-    </div>
+    </nav>
   );
 };
 

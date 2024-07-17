@@ -18,7 +18,7 @@ const Playlist = ({ album }: IProps): React.JSX.Element => {
   const { currentState, currentTrack, handlePlayPause } = useTrack();
 
   return (
-    <div className='playlist'>
+    <section className='playlist'>
       {album.tracks?.map((item: ITrack) => (
         <TrackLine
           track={item}
@@ -28,7 +28,7 @@ const Playlist = ({ album }: IProps): React.JSX.Element => {
           playing={currentTrack?.id === item.id && currentState === 'playing'}
         />
       ))}
-    </div>
+    </section>
   );
 };
 

@@ -22,7 +22,7 @@ const Header = ({ artist }: IProps): React.JSX.Element => {
   };
 
   return (
-    <div
+    <section
       style={{ backgroundImage: `url(${artist.image})` }}
       className='artist-cover flex flex-column flex-h-end'
     >
@@ -50,7 +50,7 @@ const Header = ({ artist }: IProps): React.JSX.Element => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

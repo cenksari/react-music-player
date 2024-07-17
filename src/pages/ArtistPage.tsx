@@ -19,7 +19,7 @@ const ArtistPage = (): React.JSX.Element => {
   return (
     <div className='artist flex flex-column flex-gap no-select'>
       <Header artist={albumData[0].artist} />
-      <div className='container flex flex-column flex-gap'>
+      <section className='container flex flex-column flex-gap'>
         <div className='flex flex-space-between flex-v-center'>
           <Link to='/' className='active-opacity underline'>
             <h3>Songs</h3>
@@ -67,7 +67,7 @@ const ArtistPage = (): React.JSX.Element => {
             playing={currentState === 'playing' && currentTrack?.id === albumData[3].tracks[3].id}
           />
         </div>
-      </div>
+      </section>
       <Albums url={`/albums/${albumData[0].artist.id}`} title='Albums' albums={albumData} />
       <Albums url={`/albums/${albumData[0].artist.id}`} title='Featured on' albums={albumData} />
     </div>

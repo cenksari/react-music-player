@@ -30,7 +30,7 @@ const Buttons = ({ album }: IProps): React.JSX.Element => {
   };
 
   return (
-    <div className='flex flex-gap flex-h-center flex-v-center'>
+    <section className='flex flex-gap flex-h-center flex-v-center'>
       <button
         type='button'
         className='flex flex-h-center flex-v-center small active-opacity'
@@ -69,7 +69,7 @@ const Buttons = ({ album }: IProps): React.JSX.Element => {
       >
         <span className='material-symbols-outlined'>more_vert</span>
       </button>
-    </div>
+    </section>
   );
 };
 

@@ -17,7 +17,7 @@ interface IProps {
 }
 
 const Albums = ({ url, title, albums }: IProps): React.JSX.Element => (
-  <div className='container flex flex-column flex-gap'>
+  <section className='container flex flex-column flex-gap'>
     <div className='flex flex-space-between flex-v-center'>
       <Link to={url} className='active-opacity underline'>
         <h3>{title}</h3>
@@ -28,7 +28,7 @@ const Albums = ({ url, title, albums }: IProps): React.JSX.Element => (
         <Card key={item.id} album={item} />
       ))}
     </Slider>
-  </div>
+  </section>
 );
 
 export default Albums;

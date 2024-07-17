@@ -21,7 +21,7 @@ const Image = ({ album }: IProps): React.JSX.Element => {
   };
 
   return (
-    <div className='image'>
+    <section className='image'>
       <div className='image-inner'>
         <div className='front'>
           <img src={album.image} alt={album.name} draggable='false' />
@@ -53,7 +53,7 @@ const Image = ({ album }: IProps): React.JSX.Element => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
