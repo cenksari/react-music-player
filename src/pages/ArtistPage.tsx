@@ -22,7 +22,7 @@ const ArtistPage = (): React.JSX.Element => {
       <section className='container flex flex-column flex-gap'>
         <div className='flex flex-space-between flex-v-center'>
           <Link to='/' className='active-opacity underline'>
-            <h3>Songs</h3>
+            <h2>Songs</h2>
           </Link>
         </div>
         <div className='flex flex-column'>

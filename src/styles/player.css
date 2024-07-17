@@ -439,6 +439,14 @@ strong,
   margin-bottom: 10px;
 }
 
+.information .album h1 {
+  font-size: 1.7em;
+}
+
+.information .album h2 {
+  font-size: 1em;
+}
+
 .information .album .album-info {
   margin-top: 5px;
 }
@@ -644,7 +652,7 @@ strong,
 }
 
 .artist-cover h1 {
-  font-size: 1.7em;
+  font-size: 1.9em;
   margin-bottom: 10px;
 }
 
@@ -880,7 +888,7 @@ strong,
   }
 
   .artist-cover h1 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 
   .artist-cover p,

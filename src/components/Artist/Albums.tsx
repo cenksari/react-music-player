@@ -20,7 +20,7 @@ const Albums = ({ url, title, albums }: IProps): React.JSX.Element => (
   <section className='container flex flex-column flex-gap'>
     <div className='flex flex-space-between flex-v-center'>
       <Link to={url} className='active-opacity underline'>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
       </Link>
     </div>
     <Slider>
