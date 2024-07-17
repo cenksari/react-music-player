@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // components
-import Card from './Card';
+import Card from '../Album/Card';
 import Slider from '../Common/Slider';
 
 // types

@@ -1,5 +1,8 @@
 import React from 'react';
 
+// components
+import Search from '../Search/Search';
+
 // types
 import { IArtist } from '../../types/types';
 
@@ -8,7 +11,7 @@ interface IProps {
   artist: IArtist;
 }
 
-const Cover = ({ artist }: IProps): React.JSX.Element => {
+const Header = ({ artist }: IProps): React.JSX.Element => {
   const [follow, setFollow] = React.useState<boolean>(false);
 
   /**
@@ -24,6 +27,7 @@ const Cover = ({ artist }: IProps): React.JSX.Element => {
       className='artist-cover flex flex-column flex-h-end'
     >
       <div className='artist-gradient'>
+        <Search />
         <div className='container'>
           <h1 className='text-shadow'>{artist.name}</h1>
           <p className='text-shadow'>{artist.description}</p>
@@ -50,4 +54,4 @@ const Cover = ({ artist }: IProps): React.JSX.Element => {
   );
 };
 
-export default Cover;
+export default Header;

@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import useTrack from '../hooks/useTrack';
 
 // components
-import Song from '../components/Artist/Song';
-import Cover from '../components/Artist/Cover';
+import Song from '../components/Song/Song';
 import Albums from '../components/Artist/Albums';
+import Header from '../components/Artist/Header';
 
 // data
 import albumData from '../data/albumData.json';
@@ -18,7 +18,7 @@ const ArtistPage = (): React.JSX.Element => {
 
   return (
     <div className='artist flex flex-column flex-gap no-select'>
-      <Cover artist={albumData[0].artist} />
+      <Header artist={albumData[0].artist} />
       <div className='container flex flex-column flex-gap'>
         <div className='flex flex-space-between flex-v-center'>
           <Link to='/' className='active-opacity underline'>

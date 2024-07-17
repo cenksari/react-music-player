@@ -1,7 +1,8 @@
 import React from 'react';
 
 // components
-import Card from '../components/Artist/Card';
+import Card from '../components/Album/Card';
+import Search from '../components/Search/Search';
 
 // types
 import type { IAlbum } from '../types/types';
@@ -13,6 +14,7 @@ const AlbumsPage = (): React.JSX.Element => {
   return (
     <div className='albums flex flex-column flex-gap no-select'>
       <div className='container flex flex-column flex-gap'>
+        <Search />
         <div className='flex flex-space-between flex-v-center'>
           <h3>Albums</h3>
         </div>

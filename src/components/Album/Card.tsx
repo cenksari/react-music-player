@@ -15,7 +15,7 @@ const Card = ({ album }: IProps): React.JSX.Element => (
     <div className='card-image' style={{ backgroundImage: `url(${album.image})` }} />
     <div className='card-info flex flex-column flex-gap-small'>
       <strong>{album.name}</strong>
-      <div className='flex flex-gap-medium flex-h-center flex-v-center'>
+      <div className='flex flex-gap-small flex-h-center flex-v-center'>
         {album.explicit && (
           <span className='material-symbols-outlined' title='Explicit'>
             explicit
