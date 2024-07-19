@@ -5,7 +5,6 @@ import useTrack from '../../hooks/useTrack';
 
 // components
 import Volume from './Volume';
-import Expand from './Expand';
 import Control from './Control';
 import Details from './Details';
 import Progress from './Progress';
@@ -27,7 +26,6 @@ const Player = (): React.JSX.Element | null => {
           <Details />
           <div className='player-controls flex flex-gap-medium flex-h-end flex-v-center flex-1'>
             <Volume />
-            <Expand />
             <ControlMini />
           </div>
         </div>
