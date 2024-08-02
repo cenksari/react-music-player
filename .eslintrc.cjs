@@ -17,6 +17,8 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'react/require-default-props': 'off',
+    '@typescript-eslint/no-throw-literal': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
 };

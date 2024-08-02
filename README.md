@@ -4,11 +4,11 @@ React Music Player is a sleek and modern music streaming application built with 
 
 Key Features:
 
-* **Stunning UI/UX**: A visually appealing design that ensures a seamless user experience across various devices and screen sizes.
-* **Music Library Management**: Easily manage your music library, including creating playlists, adding songs, and editing track information.
-* **Search and Filter**: Quickly find your favorite songs, artists, or albums using the advanced search and filter functionality.
-* **Playback Controls**: Intuitive playback controls allow for easy music control, including play, pause, skip, and volume adjustment.
-* **Responsive Design**: Optimized for use on desktops, laptops, tablets, and mobile devices, ensuring a consistent experience regardless of the device.
+- **Stunning UI/UX**: A visually appealing design that ensures a seamless user experience across various devices and screen sizes.
+- **Music Library Management**: Easily manage your music library, including creating playlists, adding songs, and editing track information.
+- **Search and Filter**: Quickly find your favorite songs, artists, or albums using the advanced search and filter functionality.
+- **Playback Controls**: Intuitive playback controls allow for easy music control, including play, pause, skip, and volume adjustment.
+- **Responsive Design**: Optimized for use on desktops, laptops, tablets, and mobile devices, ensuring a consistent experience regardless of the device.
 
 Whether you're a music enthusiast, a developer, or a business looking to create a music streaming service, React Music Player is the perfect starting point. Its modular architecture and extensive documentation make it easy to customize and extend to meet your specific needs.
 
