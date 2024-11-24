@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 
@@ -13,12 +13,12 @@ import type { IAlbum } from '../types/types';
 // data
 import albumData from '../data/albumData.json';
 
-const AlbumPage = (): React.JSX.Element => {
+const AlbumPage = (): JSX.Element => {
   const { id } = useParams();
 
-  const [currentAlbumData, setCurrentAlbumData] = React.useState<IAlbum | null>(null);
+  const [currentAlbumData, setCurrentAlbumData] = useState<IAlbum | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const currentAlbum = albumData.find((album) => album.id === id);
 
     if (currentAlbum) {

@@ -1,12 +1,10 @@
-import React from 'react';
-
 // interfaces
 interface IProps {
   image: string;
   children: React.ReactNode;
 }
 
-const Cover = ({ image, children }: IProps): React.JSX.Element => (
+const Cover = ({ image, children }: IProps): JSX.Element => (
   <>
     <div
       style={{

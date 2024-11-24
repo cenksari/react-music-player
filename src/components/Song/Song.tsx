@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 // hooks
@@ -15,7 +13,7 @@ interface IProps {
   playing: boolean;
 }
 
-const Song = ({ album, track, playing }: IProps): React.JSX.Element => {
+const Song = ({ album, track, playing }: IProps): JSX.Element => {
   const { handlePlayPause } = useTrack();
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext } from 'react';
 
 // contexts
 import TrackContext from '../contexts/TrackContext';
@@ -24,7 +24,7 @@ const useTrack = () => {
     handleMuteChange,
     handleVolumeChange,
     handleProgressChange,
-  } = React.useContext(TrackContext) as ITrackContext;
+  } = useContext(TrackContext) as ITrackContext;
 
   return {
     muted,

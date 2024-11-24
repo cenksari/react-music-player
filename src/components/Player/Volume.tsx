@@ -1,9 +1,7 @@
-import React from 'react';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const Volume = (): React.JSX.Element => {
+const Volume = (): JSX.Element => {
   const { muted, volume, handleMuteChange, handleVolumeChange } = useTrack();
 
   return (

@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const Details = (): React.JSX.Element | null => {
+const Details = (): JSX.Element | null => {
   const { currentTrack, currentAlbum } = useTrack();
 
   if (currentTrack && currentAlbum) {

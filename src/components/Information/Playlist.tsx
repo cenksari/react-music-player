@@ -1,5 +1,3 @@
-import React from 'react';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
@@ -14,7 +12,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Playlist = ({ album }: IProps): React.JSX.Element => {
+const Playlist = ({ album }: IProps): JSX.Element => {
   const { currentState, currentTrack, handlePlayPause } = useTrack();
 
   return (

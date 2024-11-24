@@ -1,5 +1,3 @@
-import React from 'react';
-
 // components
 import Card from '../components/Album/Card';
 import Search from '../components/Search/Search';
@@ -10,7 +8,7 @@ import type { IAlbum } from '../types/types';
 // data
 import albumData from '../data/albumData.json';
 
-const AlbumsPage = (): React.JSX.Element => (
+const AlbumsPage = (): JSX.Element => (
   <div className='albums flex flex-column flex-gap no-select'>
     <div className='container flex flex-column'>
       <Search />

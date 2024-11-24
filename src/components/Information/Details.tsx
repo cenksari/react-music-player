@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 // types
@@ -10,7 +8,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Details = ({ album }: IProps): React.JSX.Element => (
+const Details = ({ album }: IProps): JSX.Element => (
   <section className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
     <h1>
       <Link to={`/artist/${album?.artist.id}`} className='active-opacity'>

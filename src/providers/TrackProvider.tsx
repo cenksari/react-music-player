@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 
 // contexts
 import TrackContext from '../contexts/TrackContext';
@@ -11,21 +11,21 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const TrackProvider = ({ children }: IProps): React.JSX.Element => {
-  const audioRef = React.useRef<HTMLAudioElement>(null);
+const TrackProvider = ({ children }: IProps): JSX.Element => {
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-  const [volume, setVolume] = React.useState<number>(0.5);
-  const [muted, setMuted] = React.useState<boolean>(false);
-  const [lastVolume, setLastVolume] = React.useState<number>(0.5);
-  const [trackDuration, setTrackDuration] = React.useState<number>(0);
-  const [prevTrack, setPrevTrack] = React.useState<ITrack | null>(null);
-  const [nextTrack, setNextTrack] = React.useState<ITrack | null>(null);
-  const [currentProgress, setCurrentProgress] = React.useState<number>(0);
-  const [currentState, setCurrentState] = React.useState<string | null>(null);
-  const [currentTrack, setCurrentTrack] = React.useState<ITrack | null>(null);
-  const [currentAlbum, setCurrentAlbum] = React.useState<IAlbum | null>(null);
+  const [volume, setVolume] = useState<number>(0.5);
+  const [muted, setMuted] = useState<boolean>(false);
+  const [lastVolume, setLastVolume] = useState<number>(0.5);
+  const [trackDuration, setTrackDuration] = useState<number>(0);
+  const [prevTrack, setPrevTrack] = useState<ITrack | null>(null);
+  const [nextTrack, setNextTrack] = useState<ITrack | null>(null);
+  const [currentProgress, setCurrentProgress] = useState<number>(0);
+  const [currentState, setCurrentState] = useState<string | null>(null);
+  const [currentTrack, setCurrentTrack] = useState<ITrack | null>(null);
+  const [currentAlbum, setCurrentAlbum] = useState<IAlbum | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentAlbum?.tracks) {
       const currentIndex = currentAlbum.tracks.findIndex((track) => track.id === currentTrack?.id);
 
@@ -78,7 +78,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const audioElement = audioRef?.current;
 
     audioElement?.addEventListener('loadeddata', handlePlay);
@@ -95,7 +95,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
    * @param {IAlbum} album - The album containing the track.
    * @returns {void}
    */
-  const handlePlayPause = React.useCallback(
+  const handlePlayPause = useCallback(
     (track: ITrack, album: IAlbum): void => {
       const audioElement = audioRef?.current;
 
@@ -172,7 +172,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
    * Handles the mute change event.
    * Toggles the muted state and sets the volume of the audio element accordingly.
    */
-  const handleMuteChange = React.useCallback((): void => {
+  const handleMuteChange = useCallback((): void => {
     if (audioRef?.current) {
       const audioElement = audioRef.current;
 
@@ -210,7 +210,7 @@ const TrackProvider = ({ children }: IProps): React.JSX.Element => {
     }
   };
 
-  const providerValue = React.useMemo(
+  const providerValue = useMemo(
     () => ({
       muted,
       volume,

@@ -1,18 +1,16 @@
-'use client';
-
-import React from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 const Slider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const startX = React.useRef<number>(0);
-  const isDown = React.useRef<boolean>(false);
-  const itemWidth = React.useRef<number>(0);
-  const scrollLeftX = React.useRef<number>(0);
-  const preventClick = React.useRef<boolean>(false);
-  const movedDistance = React.useRef<number>(0);
-  const navReferenceDiv = React.useRef<HTMLDivElement | null>(null);
+  const startX = useRef<number>(0);
+  const isDown = useRef<boolean>(false);
+  const itemWidth = useRef<number>(0);
+  const scrollLeftX = useRef<number>(0);
+  const preventClick = useRef<boolean>(false);
+  const movedDistance = useRef<number>(0);
+  const navReferenceDiv = useRef<HTMLDivElement | null>(null);
 
-  const [leftArrowDisabled, setLeftArrowDisabled] = React.useState<boolean>(true);
-  const [rightArrowDisabled, setRightArrowDisabled] = React.useState<boolean>(false);
+  const [leftArrowDisabled, setLeftArrowDisabled] = useState<boolean>(true);
+  const [rightArrowDisabled, setRightArrowDisabled] = useState<boolean>(false);
 
   /**
    * Updates the disabled state of the left and right arrow buttons based on the current scroll position.
@@ -33,7 +31,7 @@ const Slider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    *
    * @param e - The `MouseEvent` representing the mouse move event.
    */
-  const handleMouseMove = React.useCallback((e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!isDown.current) return;
 
     const x = e.pageX - navReferenceDiv.current!.offsetLeft;
@@ -55,7 +53,7 @@ const Slider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    *
    * @param e - The `MouseEvent` representing the mouse down event.
    */
-  const handleMouseDown = React.useCallback((e: MouseEvent) => {
+  const handleMouseDown = useCallback((e: MouseEvent) => {
     e.preventDefault();
 
     isDown.current = true;
@@ -90,7 +88,7 @@ const Slider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    * Updates the arrow button state during scrolling.
    * Calls the `updateButtons` function to determine whether the left or right arrow buttons should be disabled.
    */
-  const handleScroll = React.useCallback(updateButtons, []);
+  const handleScroll = useCallback(updateButtons, []);
 
   /**
    * Prevents the default click action if the mouse has been dragged to avoid accidental clicks on child elements during scrolling.
@@ -126,7 +124,7 @@ const Slider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
    * Calculates the width of the first child element to use for scrolling by item width.
    * Adds event listeners for mouse interaction, scrolling, and resizing.
    */
-  React.useEffect(() => {
+  useEffect(() => {
     const currentNav = navReferenceDiv.current!;
 
     // Get the width of the first child element and store it in itemWidth.current

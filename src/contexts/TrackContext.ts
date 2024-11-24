@@ -1,9 +1,9 @@
-import React from 'react';
+import { createContext } from 'react';
 
 // types
 import type { ITrackContext } from '../types/types';
 
-const TrackContext = React.createContext<ITrackContext>({
+const TrackContext = createContext<ITrackContext>({
   muted: false,
   volume: 0.5,
   audioRef: null,

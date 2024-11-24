@@ -1,5 +1,3 @@
-import React from 'react';
-
 // components
 import Image from './Image';
 import Details from './Details';
@@ -14,7 +12,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Information = ({ album }: IProps): React.JSX.Element => (
+const Information = ({ album }: IProps): JSX.Element => (
   <div className='information flex flex-column flex-gap no-select'>
     <Image album={album} />
     <Details album={album} />

@@ -1,5 +1,3 @@
-import React from 'react';
-
 // types
 import type { ITrack } from '../../types/types';
 
@@ -16,7 +14,7 @@ const TrackLine = ({
   handlePlayPause,
   playing = false,
   selected = false,
-}: IProps): React.JSX.Element => (
+}: IProps): JSX.Element => (
   <div
     className={
       selected

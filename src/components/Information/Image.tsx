@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -10,8 +10,8 @@ interface IProps {
   album: IAlbum;
 }
 
-const Image = ({ album }: IProps): React.JSX.Element => {
-  const [follow, setFollow] = React.useState<boolean>(false);
+const Image = ({ album }: IProps): JSX.Element => {
+  const [follow, setFollow] = useState<boolean>(false);
 
   /**
    * Toggles the follow state for the artist.

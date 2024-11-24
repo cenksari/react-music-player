@@ -1,5 +1,3 @@
-import React from 'react';
-
 // components
 import Player from './components/Player/Player';
 
@@ -12,7 +10,7 @@ import Navigation from './navigation/Navigation';
 // providers
 import TrackProvider from './providers/TrackProvider';
 
-const App = (): React.JSX.Element => (
+const App = (): JSX.Element => (
   <TrackProvider>
     <Player />
     <Navigation />

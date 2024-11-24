@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
 // pages
@@ -7,7 +5,7 @@ import AlbumPage from '../pages/AlbumPage';
 import ArtistPage from '../pages/ArtistPage';
 import AlbumsPage from '../pages/AlbumsPage';
 
-const Navigation = (): React.JSX.Element => (
+const Navigation = (): JSX.Element => (
   <Routes>
     <Route path='/' element={<ArtistPage />} />
     <Route path='/album/:id' element={<AlbumPage />} />

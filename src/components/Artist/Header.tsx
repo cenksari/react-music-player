@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 // components
 import Search from '../Search/Search';
@@ -11,8 +11,8 @@ interface IProps {
   artist: IArtist;
 }
 
-const Header = ({ artist }: IProps): React.JSX.Element => {
-  const [follow, setFollow] = React.useState<boolean>(false);
+const Header = ({ artist }: IProps): JSX.Element => {
+  const [follow, setFollow] = useState<boolean>(false);
 
   /**
    * Toggles the follow state for the artist.

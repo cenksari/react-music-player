@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   semi: true,
   tabWidth: 2,
   useTabs: false,
@@ -10,3 +10,5 @@ module.exports = {
   bracketSpacing: true,
   jsxSingleQuote: true,
 };
+
+export default config;

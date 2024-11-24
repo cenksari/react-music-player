@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 // components
@@ -16,7 +14,7 @@ interface IProps {
   albums: IAlbum[];
 }
 
-const Albums = ({ url, title, albums }: IProps): React.JSX.Element => (
+const Albums = ({ url, title, albums }: IProps): JSX.Element => (
   <section className='container flex flex-column flex-gap'>
     <div className='flex flex-space-between flex-v-center'>
       <Link to={url} className='active-opacity underline'>

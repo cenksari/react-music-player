@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 // hooks
@@ -13,7 +11,7 @@ import Header from '../components/Artist/Header';
 // data
 import albumData from '../data/albumData.json';
 
-const ArtistPage = (): React.JSX.Element => {
+const ArtistPage = (): JSX.Element => {
   const { currentState, currentTrack } = useTrack();
 
   return (

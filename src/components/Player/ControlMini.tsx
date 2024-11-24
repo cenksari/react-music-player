@@ -1,9 +1,7 @@
-import React from 'react';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const ControlMini = (): React.JSX.Element | null => {
+const ControlMini = (): JSX.Element | null => {
   const { currentState, currentTrack, currentAlbum, handlePlayPause } = useTrack();
 
   if (currentTrack && currentAlbum) {

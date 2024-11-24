@@ -1,9 +1,7 @@
-import React from 'react';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const Control = (): React.JSX.Element | null => {
+const Control = (): JSX.Element | null => {
   const { prevTrack, nextTrack, currentState, currentTrack, currentAlbum, handlePlayPause } =
     useTrack();
 

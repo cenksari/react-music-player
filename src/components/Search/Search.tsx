@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Search = (): React.JSX.Element => (
+const Search = (): JSX.Element => (
   <nav className='search flex flex-h-center'>
     <div className='search-container'>
       <label

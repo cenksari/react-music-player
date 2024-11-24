@@ -1,5 +1,3 @@
-import React from 'react';
-
 // hooks
 import useTrack from '../../hooks/useTrack';
 
@@ -11,7 +9,7 @@ import Progress from './Progress';
 import Duration from './Duration';
 import ControlMini from './ControlMini';
 
-const Player = (): React.JSX.Element | null => {
+const Player = (): JSX.Element | null => {
   const { currentTrack, currentAlbum } = useTrack();
 
   if (currentTrack && currentAlbum) {
