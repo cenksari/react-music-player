@@ -9,12 +9,12 @@ interface IProps {
   handlePlayPause: () => void;
 }
 
-const TrackLine = ({
+const TrackLine: React.FC<IProps> = ({
   track,
   handlePlayPause,
   playing = false,
   selected = false,
-}: IProps): JSX.Element => (
+}) => (
   <div
     className={
       selected

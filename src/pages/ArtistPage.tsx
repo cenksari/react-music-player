@@ -11,7 +11,7 @@ import Header from '../components/Artist/Header';
 // data
 import albumData from '../data/albumData.json';
 
-const ArtistPage = (): JSX.Element => {
+const ArtistPage: React.FC = () => {
   const { currentState, currentTrack } = useTrack();
 
   return (

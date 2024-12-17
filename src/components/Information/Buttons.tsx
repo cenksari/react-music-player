@@ -9,7 +9,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Buttons = ({ album }: IProps): JSX.Element => {
+const Buttons: React.FC<IProps> = ({ album }) => {
   const { currentState, currentTrack, currentAlbum, handlePlayPause } = useTrack();
 
   /**

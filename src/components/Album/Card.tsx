@@ -8,7 +8,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Card = ({ album }: IProps): JSX.Element => (
+const Card: React.FC<IProps> = ({ album }) => (
   <Link key={album.id} to={`/album/${album.id}`} className='card active-opacity'>
     <div className='card-image' style={{ backgroundImage: `url(${album.image})` }} />
     <div className='card-info flex flex-column flex-gap-small'>

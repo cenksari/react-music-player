@@ -11,8 +11,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const TrackProvider = ({ children }: IProps): JSX.Element => {
-  const audioRef = useRef<HTMLAudioElement>(null);
+const TrackProvider: React.FC<IProps> = ({ children }) => {
+  const audioRef = useRef<HTMLAudioElement>(null!);
 
   const [volume, setVolume] = useState<number>(0.5);
   const [muted, setMuted] = useState<boolean>(false);

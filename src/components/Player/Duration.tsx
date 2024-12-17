@@ -4,7 +4,7 @@ import useTrack from '../../hooks/useTrack';
 // utilities
 import Utils from '../../utils/Utils';
 
-const Duration = (): JSX.Element => {
+const Duration: React.FC = () => {
   const { trackDuration, currentProgress } = useTrack();
 
   return (

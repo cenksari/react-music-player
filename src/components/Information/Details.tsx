@@ -8,7 +8,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Details = ({ album }: IProps): JSX.Element => (
+const Details: React.FC<IProps> = ({ album }) => (
   <section className='album flex flex-column flex-gap-small flex-h-center flex-v-center'>
     <h1>
       <Link to={`/artist/${album?.artist.id}`} className='active-opacity'>

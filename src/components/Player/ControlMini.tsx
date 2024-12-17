@@ -1,7 +1,7 @@
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const ControlMini = (): JSX.Element | null => {
+const ControlMini: React.FC = () => {
   const { currentState, currentTrack, currentAlbum, handlePlayPause } = useTrack();
 
   if (currentTrack && currentAlbum) {

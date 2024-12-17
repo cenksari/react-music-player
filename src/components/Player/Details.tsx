@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const Details = (): JSX.Element | null => {
+const Details: React.FC = () => {
   const { currentTrack, currentAlbum } = useTrack();
 
   if (currentTrack && currentAlbum) {

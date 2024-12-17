@@ -11,7 +11,7 @@ interface IProps {
   artist: IArtist;
 }
 
-const Header = ({ artist }: IProps): JSX.Element => {
+const Header: React.FC<IProps> = ({ artist }) => {
   const [follow, setFollow] = useState<boolean>(false);
 
   /**

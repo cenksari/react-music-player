@@ -4,7 +4,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Cover = ({ image, children }: IProps): JSX.Element => (
+const Cover: React.FC<IProps> = ({ image, children }) => (
   <>
     <div
       style={{

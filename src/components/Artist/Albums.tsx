@@ -14,7 +14,7 @@ interface IProps {
   albums: IAlbum[];
 }
 
-const Albums = ({ url, title, albums }: IProps): JSX.Element => (
+const Albums: React.FC<IProps> = ({ url, title, albums }) => (
   <section className='container flex flex-column flex-gap'>
     <div className='flex flex-space-between flex-v-center'>
       <Link to={url} className='active-opacity underline'>

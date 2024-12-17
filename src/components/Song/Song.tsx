@@ -13,7 +13,7 @@ interface IProps {
   playing: boolean;
 }
 
-const Song = ({ album, track, playing }: IProps): JSX.Element => {
+const Song: React.FC<IProps> = ({ album, track, playing }) => {
   const { handlePlayPause } = useTrack();
 
   return (

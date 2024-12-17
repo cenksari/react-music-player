@@ -10,7 +10,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Image = ({ album }: IProps): JSX.Element => {
+const Image: React.FC<IProps> = ({ album }) => {
   const [follow, setFollow] = useState<boolean>(false);
 
   /**

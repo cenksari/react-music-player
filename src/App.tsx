@@ -10,7 +10,7 @@ import Navigation from './navigation/Navigation';
 // providers
 import TrackProvider from './providers/TrackProvider';
 
-const App = (): JSX.Element => (
+const App: React.FC = () => (
   <TrackProvider>
     <Player />
     <Navigation />

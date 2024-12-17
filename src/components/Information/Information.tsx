@@ -12,7 +12,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Information = ({ album }: IProps): JSX.Element => (
+const Information: React.FC<IProps> = ({ album }) => (
   <div className='information flex flex-column flex-gap no-select'>
     <Image album={album} />
     <Details album={album} />

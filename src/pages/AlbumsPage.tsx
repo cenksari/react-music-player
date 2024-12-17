@@ -8,7 +8,7 @@ import type { IAlbum } from '../types/types';
 // data
 import albumData from '../data/albumData.json';
 
-const AlbumsPage = (): JSX.Element => (
+const AlbumsPage: React.FC = () => (
   <div className='albums flex flex-column flex-gap no-select'>
     <div className='container flex flex-column'>
       <Search />

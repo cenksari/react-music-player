@@ -1,4 +1,4 @@
-const Search = (): JSX.Element => (
+const Search: React.FC = () => (
   <nav className='search flex flex-h-center'>
     <div className='search-container'>
       <label

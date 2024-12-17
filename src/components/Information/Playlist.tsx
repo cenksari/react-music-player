@@ -12,7 +12,7 @@ interface IProps {
   album: IAlbum;
 }
 
-const Playlist = ({ album }: IProps): JSX.Element => {
+const Playlist: React.FC<IProps> = ({ album }) => {
   const { currentState, currentTrack, handlePlayPause } = useTrack();
 
   return (

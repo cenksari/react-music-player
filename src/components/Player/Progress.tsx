@@ -1,7 +1,7 @@
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-const Progress = (): JSX.Element => {
+const Progress: React.FC = () => {
   const { trackDuration, currentProgress, handleProgressChange } = useTrack();
 
   return (

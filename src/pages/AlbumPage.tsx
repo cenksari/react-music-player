@@ -13,7 +13,7 @@ import type { IAlbum } from '../types/types';
 // data
 import albumData from '../data/albumData.json';
 
-const AlbumPage = (): JSX.Element => {
+const AlbumPage: React.FC = () => {
   const { id } = useParams();
 
   const [currentAlbumData, setCurrentAlbumData] = useState<IAlbum | null>(null);

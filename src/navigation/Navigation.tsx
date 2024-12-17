@@ -5,7 +5,7 @@ import AlbumPage from '../pages/AlbumPage';
 import ArtistPage from '../pages/ArtistPage';
 import AlbumsPage from '../pages/AlbumsPage';
 
-const Navigation = (): JSX.Element => (
+const Navigation: React.FC = () => (
   <Routes>
     <Route path='/' element={<ArtistPage />} />
     <Route path='/album/:id' element={<AlbumPage />} />
