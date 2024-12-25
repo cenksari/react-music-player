@@ -1,4 +1,4 @@
-import { useRef, useMemo, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 // contexts
 import TrackContext from '../contexts/TrackContext';
@@ -95,22 +95,19 @@ const TrackProvider: React.FC<IProps> = ({ children }) => {
    * @param {IAlbum} album - The album containing the track.
    * @returns {void}
    */
-  const handlePlayPause = useCallback(
-    (track: ITrack, album: IAlbum): void => {
-      const audioElement = audioRef?.current;
+  const handlePlayPause = (track: ITrack, album: IAlbum): void => {
+    const audioElement = audioRef?.current;
 
-      if (currentTrack?.id !== track.id) {
-        addItem(track, album);
+    if (currentTrack?.id !== track.id) {
+      addItem(track, album);
 
-        audioElement?.load();
-      } else if (currentState === 'playing') {
-        audioElement?.pause();
-      } else {
-        handlePlay();
-      }
-    },
-    [currentState, currentTrack?.id]
-  );
+      audioElement?.load();
+    } else if (currentState === 'playing') {
+      audioElement?.pause();
+    } else {
+      handlePlay();
+    }
+  };
 
   /**
    * Handles the event when the current track ends.
@@ -172,7 +169,7 @@ const TrackProvider: React.FC<IProps> = ({ children }) => {
    * Handles the mute change event.
    * Toggles the muted state and sets the volume of the audio element accordingly.
    */
-  const handleMuteChange = useCallback((): void => {
+  const handleMuteChange = (): void => {
     if (audioRef?.current) {
       const audioElement = audioRef.current;
 
@@ -192,7 +189,7 @@ const TrackProvider: React.FC<IProps> = ({ children }) => {
         audioElement.volume = 0;
       }
     }
-  }, [muted, lastVolume]);
+  };
 
   /**
    * Handles the progress change event.
@@ -210,42 +207,27 @@ const TrackProvider: React.FC<IProps> = ({ children }) => {
     }
   };
 
-  const providerValue = useMemo(
-    () => ({
-      muted,
-      volume,
-      audioRef,
-      prevTrack,
-      nextTrack,
-      currentState,
-      currentTrack,
-      currentAlbum,
-      trackDuration,
-      currentProgress,
-      addItem,
-      changeState,
-      handlePlayPause,
-      handleMuteChange,
-      handleVolumeChange,
-      handleProgressChange,
-    }),
-    [
-      muted,
-      volume,
-      nextTrack,
-      prevTrack,
-      currentState,
-      currentTrack,
-      currentAlbum,
-      trackDuration,
-      currentProgress,
-      handlePlayPause,
-      handleMuteChange,
-    ]
-  );
+  const providerValue = {
+    muted,
+    volume,
+    audioRef,
+    prevTrack,
+    nextTrack,
+    currentState,
+    currentTrack,
+    currentAlbum,
+    trackDuration,
+    currentProgress,
+    addItem,
+    changeState,
+    handlePlayPause,
+    handleMuteChange,
+    handleVolumeChange,
+    handleProgressChange,
+  };
 
   return (
-    <TrackContext.Provider value={providerValue}>
+    <TrackContext value={providerValue}>
       <audio
         ref={audioRef}
         preload='auto'
@@ -262,7 +244,7 @@ const TrackProvider: React.FC<IProps> = ({ children }) => {
         Your browser does not support the audio tag.
       </audio>
       {children}
-    </TrackContext.Provider>
+    </TrackContext>
   );
 };
 
