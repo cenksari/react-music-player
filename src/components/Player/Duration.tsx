@@ -2,7 +2,7 @@
 import useTrack from '../../hooks/useTrack';
 
 // utils
-import { formatTime } from '../../utils/utils';
+import { formatTime } from '../../utils/toolbox';
 
 const Duration: React.FC = () => {
   const { trackDuration, currentProgress } = useTrack();

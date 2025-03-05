@@ -8,15 +8,12 @@ export const formatTime = (duration: number): string => {
   const min = Math.floor(duration / 60);
   const sec = Math.floor(duration - min * 60);
 
-  const formatted = [min, sec].map((n) => (n < 10 ? `0${n}` : n)).join(':');
-
-  return formatted;
+  return [min, sec].map((n) => (n < 10 ? `0${n}` : n)).join(':');
 };
 
 /**
  * Shuffles an array in place.
  *
- * @template T
  * @param {T[]} array - The array to shuffle.
  * @returns {T[]} The shuffled array.
  */
