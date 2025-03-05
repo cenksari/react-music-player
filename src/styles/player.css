@@ -176,8 +176,8 @@ input[type='range' i]::-webkit-slider-thumb {
   border-radius: 50em;
   background-color: #ffffff;
   box-shadow: 0 0 0 var(var(--l)) inset var(--c);
-  border-image: linear-gradient(90deg, var(--c) 50%, #666666 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
-    calc(100vw + var(--g));
+  border-image: linear-gradient(90deg, var(--c) 50%, #666666 0) 0 1 / calc(50% - var(--l) / 2)
+    100vw/0 calc(100vw + var(--g));
 }
 
 .material-symbols-outlined {
@@ -612,8 +612,8 @@ strong,
 .player .progress .progress-bar::-webkit-slider-thumb {
   color: red;
   background-color: red;
-  border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 / calc(50% - var(--l) / 2) 100vw/0
-    calc(100vw + var(--g));
+  border-image: linear-gradient(90deg, var(--c) 50%, #999999 0) 0 1 / calc(50% - var(--l) / 2)
+    100vw/0 calc(100vw + var(--g));
 }
 
 .player .expand-button span {
