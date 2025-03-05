@@ -4,7 +4,7 @@
  * @param {number} duration - The duration in seconds to be formatted.
  * @returns {string} The formatted time string in mm:ss format.
  */
-const formatTime = (duration: number): string => {
+export const formatTime = (duration: number): string => {
   const min = Math.floor(duration / 60);
   const sec = Math.floor(duration - min * 60);
 
@@ -20,12 +20,4 @@ const formatTime = (duration: number): string => {
  * @param {T[]} array - The array to shuffle.
  * @returns {T[]} The shuffled array.
  */
-
-const shuffleArray = <T>(array: T[]): T[] => array?.sort(() => 0.5 - Math.random());
-
-const Utils = {
-  formatTime,
-  shuffleArray,
-};
-
-export default Utils;
+export const shuffleArray = <T>(array: T[]): T[] => array?.sort(() => 0.5 - Math.random());

@@ -622,6 +622,11 @@ strong,
 
 .card {
   width: 180px;
+  margin-right: 20px;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
+  display: inline-block;
 }
 
 .card .card-image {
@@ -720,7 +725,9 @@ strong,
 }
 
 .scroll-container {
+  display: flex;
   position: relative;
+  align-items: center;
 }
 
 .scroll-container .left-arrow,
@@ -744,21 +751,30 @@ strong,
 .scroll-container .left-arrow button,
 .scroll-container .right-arrow button {
   padding: 0;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  opacity: 0.8;
   cursor: pointer;
   border-radius: 50em;
+  border: 1px solid #ffffff;
+  background-color: #000000;
+}
+
+.scroll-container .left-arrow button:hover,
+.scroll-container .right-arrow button:hover {
+  opacity: 1;
 }
 
 .scroll-container .left-arrow button span,
 .scroll-container .right-arrow button span {
-  font-size: 1.75em;
+  line-height: 1;
+  font-size: 1.5em;
 }
 
 .scrollable {
   width: 100%;
-  overflow-x: auto;
   user-select: none;
+  overflow-x: hidden;
   white-space: nowrap;
 }
 

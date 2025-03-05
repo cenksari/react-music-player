@@ -1,17 +1,17 @@
 // hooks
 import useTrack from '../../hooks/useTrack';
 
-// utilities
-import Utils from '../../utils/Utils';
+// utils
+import { formatTime } from '../../utils/utils';
 
 const Duration: React.FC = () => {
   const { trackDuration, currentProgress } = useTrack();
 
   return (
     <div className='player-duration flex flex-gap-medium flex-v-center'>
-      <span>{Utils.formatTime(currentProgress)}</span>
+      <span>{formatTime(currentProgress)}</span>
       <em>/</em>
-      <span>{Utils.formatTime(trackDuration)}</span>
+      <span>{formatTime(trackDuration)}</span>
     </div>
   );
 };
