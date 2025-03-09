@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.2.0",
+    "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^5.8.2"
   },
@@ -34,13 +34,13 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^22.13.9",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.21.0",
-    "eslint-config-prettier": "^10.0.2",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
