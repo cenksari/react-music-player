@@ -5,9 +5,9 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.4.1",
+    "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,20 +34,20 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^22.13.14",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "@typescript-eslint/eslint-plugin": "^8.28.0",
-    "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.5",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.5.3",
-    "typescript-eslint": "^8.28.0"
+    "typescript-eslint": "^8.29.0"
   }
 }
